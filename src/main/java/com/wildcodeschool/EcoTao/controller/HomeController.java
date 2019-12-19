@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.reactive.function.client.WebClient;
 
 
@@ -32,20 +32,21 @@ public class HomeController {
 	
 	private String url = "https://api.navitia.io/v1";
 	private String token ="a3653e1d-06a1-4edc-b768-c9bd561d3251";
+	private String from ="1.95814;47.92060";
+	private String to = "1.90518;47.90639";
 	private JsonNode jsonObject, geoJson  ;
 	private  ArrayNode arrayNodeJourneys,arrayNodeSections;
 	ObjectMapper objectMapper = new ObjectMapper();
 	
 
-	@GetMapping("/hello")
-	@ResponseBody
-    public JsonNode toHome() {
+	@GetMapping("/request")
+    public String toHome() {
 		WebClient  webclient = WebClient.create(url);
 		Mono<String> call = webclient.get()
                         .uri(uriBuilder-> uriBuilder
                         		.path("/coverage/{couverage}/journeys")
-                        		.queryParam("from","1.92587;47.82710")
-                        		.queryParam("to", "1.90518;47.90639")
+                        		.queryParam("from",from)
+                        		.queryParam("to", to )
                         		.queryParam("traveler_type", "standard")
                         		
                         		.build("fr-cen"))		
@@ -120,8 +121,45 @@ public class HomeController {
 	            }
 	            System.out.println(" ");       	         
 	        }
-
-		
-		return jsonObject;
+		  return "redirect:/recherche";
 	}
+	
+	@GetMapping("/test")
+	public String test(Model model) {
+		
+		model.addAttribute("journeys", listGlobale);
+		return "test";
+		
+	}
+	@GetMapping("/map")
+	public String shoMap(Model model) {
+		  String longFrom = "" ;
+		  String latFrom = "";
+		  String longTo = "" ;
+		  String latTo = "";
+		   longFrom = from.substring(0, 7);
+		   latFrom = from.substring(8,from.length());
+		   longTo = to.substring(0, 7);
+		   latTo = to.substring(8,from.length()); 
+		     
+		 model.addAttribute("longFrom", longFrom );
+		 model.addAttribute("latFrom", latFrom );
+		 model.addAttribute("longTo", longTo );
+		 model.addAttribute("latTo", latTo );
+		 
+		
+		return "leaflet";
+		
+	}
+	
+
+	
+	@GetMapping("/recherche")
+	public String recherche(Model model) {
+		
+		model.addAttribute("journeys", listGlobale);
+		return "recherche";
+		
+	}
+
 }

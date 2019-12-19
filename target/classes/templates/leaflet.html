@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
 	 
-   <link rel="stylesheet" href="styleleaflet.css">
+   <link rel="stylesheet" href="css/styleleaflet.css">
    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
@@ -16,12 +16,18 @@
 <body>
 	
 	 <div id="map"></div>
+	 
+	 
+	 <div th:text ="${longFrom}"  id="longFrom"></div>
+	 <div th:text ="${latFrom}" id="latFrom"></div>
+	 <div th:text ="${longTo} "  id="longTo"></div>
+	 <div th:text ="${latTo}"  id="latTo"></div>
 </body>
 
 
 
 
 
-<script src="map.js"></script>
+<script src="js/map.js"></script>
 
 </html>
