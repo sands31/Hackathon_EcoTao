@@ -8,7 +8,6 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.reactive.function.client.WebClient;
 
 
@@ -120,7 +119,7 @@ public class HomeController {
 	            }
 	            System.out.println(" ");       	         
 	        }
-		  return "redirect:/test";
+		  return "redirect:/recherche";
 	}
 	
 	@GetMapping("/test")
@@ -128,6 +127,14 @@ public class HomeController {
 		
 		model.addAttribute("journeys", listGlobale);
 		return "test";
+		
+	}
+	
+	@GetMapping("/recherche")
+	public String recherche(Model model) {
+		
+		model.addAttribute("journeys", listGlobale);
+		return "recherche";
 		
 	}
 }
