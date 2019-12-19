@@ -3,23 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <title>ECO TAO</title>
-    <link href="css/groupe.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/groupe.css" rel="stylesheet" type="text/css">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="css/all.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/47ff173283.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header></header>
+  <header>
+      <img class="tao-logo" src="../static/img/taologo.png" alt="">
+      <nav>
+
+          <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="#">Connectez vous</a></li>
+          <li><a href="#">Recherche</a></li>
+          <li><a href="#">Acheter vos billets</a></li>
+          <li><a href="#">Scanner vos billets</a></li>
+          <li><a href="#">Convertir vos points</a></li>
+          <li><a href="#">Challenge eco</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+    </header>
 	<div class="bg">
 		<div class="centerer">
-			<a href="#" class="button">DUBOIS FAMILY CHALLENGE<br><br>Voir le classement</a><br><br><br>
-            <a href="#" class="button">CHALLENGEZ VOS AMIS<br><br><i class="fab fa-facebook-square"></i><i class="fab fa-instagram"></i><i class="fab fa-twitter-square"></i><i class="fab fa-snapchat-square"></i><br><br></a><br><br><br>
-            <a href="#" class="button">CREER VOTRE GROUPE<br><br><i class="far fa-plus-square"></i></a>
+			<a href="#" class="button"><br>DUBOIS FAMILY CHALLENGE<br><br>Voir le classement</a><br><br><br>
+            <a href="#" class="button"><br>CHALLENGEZ VOS AMIS<br><br><i class="fab fa-facebook-square"></i><i class="fab fa-instagram"></i><i class="fab fa-twitter-square"></i><i class="fab fa-snapchat-square"></i><br><br></a><br><br><br>
+            <a href="#" class="button"><br>CREER VOTRE GROUPE<br><br><i class="far fa-plus-square"></i></a>
 		</div>
 	</div>
-<footer>
-</footer>
-    <script src="js.js" ></script>
+    <footer>
+
+      <div class="footer">
+
+        <div class="smedia">
+          <ul>
+
+            <li>
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-facebook-f"></i>
+            </li>
+
+            <li>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-instagram"></i>
+            </li>
+
+            <li>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-twitter"></i>
+            </li>
+
+            <li>
+              <i class="fab fa-linkedin-in"></i>
+              <i class="fab fa-linkedin-in"></i>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="copyright">© 2019 www.reseau-tao.fr</div>
+
+      </div>
+
+
+    </footer>
+    <script src="../static/js/app.js"></script>
+    <script>
+    var i=0;
+var timer = setInterval(function(){ document.querySelector("#compteur").textContent = i++;
+                           if(i>1000){                 clearInterval(timer);
+document.querySelector("#compteur").classList.add("end");
+}                                      }, 1000);
+    </script>
 </body>
 </html>
