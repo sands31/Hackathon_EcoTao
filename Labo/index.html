@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/home.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="compteur_container">
+      <div class="compteur">
+        <p>
+        <span class="earth">&#127758;</span>
+        <span>-</span>
+        <span id="compteur"></span>
+        <span>de co2 émis</span>
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+    <section class="eco_tao">
+
+      <div class="slogan">
+        <p>Avec EcoTao changeons les choses ensemble</p>
+      </div>
+
+      <div class="application_bouton">
+        <a href="#" class="use_appli">Utiliser l'appli</a>
+        <a href="#" class="inscription">inscrivez vous</a>
+      </div>
+
+      <div class="description">
+        <p><span>&#10004; </span>Optimiser vos trajets</p>
+        <p><span>&#10004; </span>Trouvez votre itinéraire le plus écolo</p>
+        <p><span>&#10004; </span>Challenger vos proches</p>
+      </div>
+
+    </section>
+
+
+
+    <section class="avatar_section">
+      <div class="total-2">
+        <div class="total-2a">
+            <img  class="avatar2" src="img/avatar2.gif" alt="">
+            <img class="avatar1" src="img/avatar1.gif" alt="">
+            <img class="avatar3" src="img/avatar3.gif" alt="">
+        </div>
+          <div class="podium">
+            <img src="img/podium.png" alt="">
+          </div>
+      </div>
+    </section>
+
+
+    <script>
+    var i=0;
+var timer = setInterval(function(){ document.querySelector("#compteur").textContent = i++;
+                           if(i>1000){                 clearInterval(timer);
+document.querySelector("#compteur").classList.add("end");
+}                                      }, 1000);
+    </script>
+
+  </body>
+</html>
