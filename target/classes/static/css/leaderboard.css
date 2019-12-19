@@ -5,6 +5,113 @@
     --noir:black;  
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sulphur Point', sans-serif;
+}
+nav {
+  height: 13vh;
+  background: #8a7e6e;
+  opacity: 1;
+  }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  margin-left: auto;
+
+
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.fade {
+  opacity: 1!important;
+}
+@media screen and (max-width: 768px) {
+  .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+  }
+  nav {
+    position: relative;
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 15;
+  }
+
+  .nav-links {
+    position: absolute;
+    background: #8a7e6e;
+    height: 100vh;
+    width: 100%;
+    padding-top: 90px;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+    z-index: 10;
+  }
+
+  .nav-links li {
+    opacity: 0;
+    margin-top: 40px;
+  }
+
+  .nav-links a:hover{
+    color: #FFC312!important;
+    font-size: 1.7em;
+    opacity: 0.9;
+  }
+
+  .nav-links li a {
+    font-size: 25px;
+  }
+
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  li.fade {
+    opacity: 1;
+  }
+}
+
+.tao-logo{
+  margin-top: 25px;
+  margin-left: 25px;
+  width: 100px;
+  position: absolute;
+  z-index: 1;
+}
 
 *,*:before,*:after {
     box-sizing: border-box;
@@ -29,7 +136,7 @@ h1{
     padding:10px;
     background:var(--blanc);
     left:50%;
-    margin-left:-180px;
+    margin-left:-173px;
 }
 #leaderboard ul{
     position:relative;
@@ -71,7 +178,7 @@ h1{
     font-size:12px;
 }
 #leaderboard .move{
-
+    
 }
 
 #leaderboard .replace{
@@ -97,6 +204,8 @@ h1{
   background-color:var(--blanc);
   margin-top: 30px;
   margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
   border-radius: 36px;
   padding: 2em;
   -webkit-box-shadow: -8px 9px 5px -1px var(--vert);
@@ -178,4 +287,114 @@ h1{
 
 .rang {
     float: left;
+}
+
+/*-------------------------------------footer--------------------------------------*/
+
+
+footer{
+  margin-top: 30px;
+  background: #423D35;
+  list-style: none;
+}
+
+.footer-text-area{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.smedia ul{
+  list-style: none;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 15vh;
+}
+
+.smedia ul li{
+  position: relative;
+  background: white;
+  width: 70px;
+  height: 70px;
+  
+  /*border: 2px solid;*/
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: .5s;
+  overflow: hidden;
+}
+
+.smedia ul li .fab{
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .5s;
+}
+
+
+.smedia ul li:nth-child(1) .fab{
+  color: #38A1F3;
+}
+
+.smedia ul li:nth-child(2) .fab{
+  color: #c32aa3;
+}
+
+.smedia ul li:nth-child(3) .fab{
+  color: #0077B5;
+}
+
+.smedia ul li:nth-child(4) .fab{
+  color: #38A1F3;
+}
+
+.smedia ul li:hover:nth-child(1){
+  background: #38A1F3;
+}
+.smedia ul li:hover:nth-child(2){
+  background: #c32aa3;
+}
+.smedia ul li:hover:nth-child(3){
+  background: #0077B5;
+}
+.smedia ul li:hover:nth-child(4){
+  background: #38A1F3;
+}
+
+.smedia ul li .fab:nth-child(1){
+  left: -50%;
+  opacity: 0;
+}
+.smedia ul li:hover .fab:nth-child(1){
+  left: 50%;
+  opacity: 1;
+  color: white;
+}
+.smedia ul li:hover .fab:nth-child(2){
+  left: 50%;
+  opacity: 0;
+}
+
+@media only screen and (max-width: 460px) {
+
+  .smedia ul li{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .smedia ul li .fab{
+    font-size: 20px;
+  }
+}
+
+.copyright{
+  position: relative;
+  padding-bottom: 25px;
+  text-align: center;
+  color: #D6A12A;
 }
