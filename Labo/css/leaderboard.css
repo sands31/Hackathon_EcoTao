@@ -105,11 +105,12 @@ h1{
 
 .quizgame-board .quizgame-board-title{
   text-align: center;
+  font-family: Georgia;
   padding: 5px;
-  background-color:var(--vert);
+  background-color:var(--blanc);
   font-size: 30px;
   border-radius: 30px;
-  color: var(--blanc);
+  color: var(--vert);
   font-weight: 700;
   width: 200px;
   vertical-align: middle;
@@ -121,7 +122,8 @@ h1{
 
 .quizgame-board .quizgame-rank{
   font-weight: 700;
-  color: #7E4808;
+  color: white;
+  text-align: center;
   background: var(--vert);
   margin: 0.5em;
   padding: 1em 0.5em;
@@ -171,4 +173,8 @@ h1{
 .text {
     color: var(--blanc);
     text-align: center;
+}
+
+.rang {
+    float: left;
 }
