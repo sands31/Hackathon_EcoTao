@@ -3,9 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <title>Page de recherche</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../css/recherche.css">
-        <link rel="stylesheet" href="../css/all.css">
+        <script src="https://kit.fontawesome.com/47ff173283.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -33,19 +32,19 @@
          <div th:each="trajet : ${journeys}">
          <div class="Card"> 
          <ul th:each="type : ${trajet}">
-         <i th:if="${type} == 'walking'" th:class="fas fa-bus"></i>
+            <li><i th:class="(@{${type}} == 'Bus') ? 'fas fa-bus' : ''"></i></li>
        	  	<li th:text="${type}"></li>
          </ul>
          </div>
 </div>
 <div class="Card">
-   <i class="fas fa-bus">  6</i>
+   <i class="fas fa-bus"></i>
     <i class="fas fa-leaf">110gEC</i>
    durée: 21 min
 </div>
 
          <div class="Card">
-    <i class="fas fa-car">  3</i>
+    <i class="fas fa-car"></i>
     <i class="fas fa-leaf">120gEC</i>
     durée: 40 min
 </div>
