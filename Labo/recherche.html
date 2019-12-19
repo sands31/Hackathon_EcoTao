@@ -10,22 +10,47 @@
 
     <body>
 <h1 class="h1Recherche">Recherche par lieux</h1>
-        <div class="divRecherche">
+        <div>
+            <form class="divRecherche">
         <input class="inputRecherche" name="Lieu" type="text" placeholder="Ecrivez l'adresse" required autofocus>
+                </form>
         </div>
 <h2 class="h2Recherche">Trouvez votre trajet</h2>
         
-        <div class="divTrajet">
+        <div>
+            <form class="divTrajet">
         <input class="inputTrajet" name="Lieu" type="text" placeholder="Départ" required autofocus>
         <input class="inputTrajet" name="Lieu" type="text" placeholder="Arrivé" required autofocus>
+                </form>
         </div>
         <div class="divButton">
         <button>Rechercher</button>
             </div>
-        <div class="divIcon">
-        <i class="fas fa-train"></i>
-        <i class="fas fa-bus"></i>
-        <i class="fas fa-car"></i>
-            </div>
+
+     <div class="containerCards"> 
+         
+         <div class="Card"><i  class="fas fa-train">  5</i><i class="fas fa-leaf">15gEC</i>durée: 15 min</div>
+
+<div class="Card">
+   <i class="fas fa-bus">  6</i>
+    <i class="fas fa-leaf">110gEC</i>
+   durée: 21 min
+</div>
+         <div class="Card">
+    <i class="fas fa-car">  3</i>
+    <i class="fas fa-leaf">120gEC</i>
+    durée: 40 min
+</div>
+         <div class="Card">
+   <i class="fas fa-walking"></i>
+   <i class="fas fa-leaf">1gEC</i>
+    durée: 85 min
+</div>
+                  <div class="Card">
+   <i class="fas fa-subway"></i>
+    <i class="fas fa-leaf">5gEC</i>
+   durée: 18 min
+</div>
+         </div>
     </body>
 </html>

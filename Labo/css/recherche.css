@@ -1,11 +1,16 @@
+body {
+    background-color: #baffc9;
+}
 .h1Recherche {
     font-size: 18px;
     text-align: center;
+    margin-top: 20px;
 }
 
 .h2Recherche {
     font-size: 18px;
     text-align: center;
+    margin-top: 30px;
 }
 
 .inputRecherche {
@@ -35,8 +40,27 @@
     margin-top: 10px;
 }
 
-.divIcon {
+
+.containerCards {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
 }
 
+.Card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    margin-top: 40px;
+    border: solid;
+    border-color: lightblue;
+    background-color: #bae1ff;
+}
+
+.fa-leaf {
+    color: green;
+}
