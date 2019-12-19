@@ -32,7 +32,14 @@
          <div th:each="trajet : ${journeys}">
          <div class="Card"> 
          <ul th:each="type : ${trajet}">
-            <li><i th:class="(@{${type}} == 'Bus') ? 'fas fa-bus' : ''"></i></li>
+            <li>
+            	<i th:class="(@{${type.contains('gEC')}}) ? 'fas fa-leaf' : ''"></i>
+            	<i th:class="(@{${type}} == 'Bus') ? 'fas fa-bus' : ''"></i>
+            	<i th:class="(@{${type}} == 'walking') ? 'fas fa-walking' : ''"></i>
+            	<i th:class="(@{${type}} == 'car') ? 'fas fa-car' : ''"></i>
+            	<i th:class="(@{${type}} == 'Tramway') ? 'fas fa-subway' : ''"></i>
+            	<i th:class="(@{${type}} == 'park') ? 'fas fa-parking' : ''"></i>
+            </li>
        	  	<li th:text="${type}"></li>
          </ul>
          </div>

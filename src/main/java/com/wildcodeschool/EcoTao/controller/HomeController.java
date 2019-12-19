@@ -70,7 +70,7 @@ public class HomeController {
 	        	  List <String > pathList  = new ArrayList<>();
 
 	             System.out.print(journey.get("co2_emission").get("value") +" ");
-	                  list.add(journey.get("co2_emission").get("value").toString().replace("\"", ""));
+	                  list.add(journey.get("co2_emission").get("value").toString().replace("\"", "") + " gEC");
 
 						arrayNodeSections =  (ArrayNode) journey.get("sections");
 						//arrayNodeCor = (ArrayNode) jsonNode.get("sections").get("geojson").get("coordinates");
