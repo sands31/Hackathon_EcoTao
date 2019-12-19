@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8" />
         <title>Page de recherche</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/recherche.css">
-        <link rel="stylesheet" href="css/all.css">
+        <link rel="stylesheet" href="../css/favicon/all.css">
+        <link rel="stylesheet" href="../css/recherche.css">
     </head>
 
     <body>
+   
 <h1 class="h1Recherche">Recherche par lieux</h1>
         <div>
             <form class="divRecherche">
@@ -24,20 +25,27 @@
                 </form>
         </div>
         <div class="divButton">
-        <button>Rechercher</button>
+        <a href="/request">Rechercher</a>
+        <button></button>
             </div>
 
      <div class="containerCards"> 
-         
-         <div class="Card"><i  class="fas fa-train">  5</i><i class="fas fa-leaf">15gEC</i>durée: 15 min</div>
-
+         <div th:each="trajet : ${journeys}">
+         <div class="Card"> 
+         <ul th:each="type : ${trajet}">
+         <i th:if="${type} == 'walking'" th:class="fas fa-bus"></i>
+       	  	<li th:text="${type}"></li>
+         </ul>
+         </div>
+</div>
 <div class="Card">
-   <i class="fas fa-bus">  6</i>
+   <i class="fas fa-bus"></i>
     <i class="fas fa-leaf">110gEC</i>
    durée: 21 min
 </div>
+
          <div class="Card">
-    <i class="fas fa-car">  3</i>
+    <i class="fas fa-car"></i>
     <i class="fas fa-leaf">120gEC</i>
     durée: 40 min
 </div>
@@ -52,5 +60,6 @@
    durée: 18 min
 </div>
          </div>
+   
     </body>
 </html>
