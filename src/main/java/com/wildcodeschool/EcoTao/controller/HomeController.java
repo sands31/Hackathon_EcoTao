@@ -26,6 +26,7 @@ public class HomeController {
 
     List<ArrayList<String>> listGlobale = new ArrayList<ArrayList<String>>();
     List<ArrayList<String>> listGlobalePath = new ArrayList<ArrayList<String>>();
+    Double matrice[][];
 	
 	
 	
@@ -136,22 +137,29 @@ public class HomeController {
 		  
 		 
 		  for(int i = 0 ; i< listGlobalePath.size() ; i ++)
-	        {   String matrice[][] = new String [listGlobalePath.get(i).size()/2][2];
+	        {    matrice = new Double [listGlobalePath.get(i).size()/2][2];
 	             int k = 0;
 	            for(int j=0; j  < listGlobalePath.get(i).size()-1;j+=2) {
 	               
 	            	System.out.print(listGlobalePath.get(i).get(j) +"  " );	
-	            	matrice[k][1] = listGlobalePath.get(i).get(j);
-	    			matrice[k][0] = listGlobalePath.get(i).get(j+1);
+	            	matrice[k][1] = Double.parseDouble(listGlobalePath.get(i).get(j));
+	    			matrice[k][0] = Double.parseDouble(listGlobalePath.get(i).get(j+1));
 	    			k++;
 	            	
 	               
 	            }
 	            System.out.println(" ");       	         
 	        }
+		  for(int i = 0; i < matrice.length; i++) {
+				for(int j=0 ; j<matrice[0].length; j++) {
+					System.out.print(matrice[i][j] + " ");
+				}
+				System.out.println("");
+			}
 			System.out.println("-------------------------------------");
 		  System.out.println(jsonObject.get("car_direct_path").get("co2_emission").get("value"));
 		  return "redirect:/recherche";
+	
 	}
 	
 	@GetMapping("/test")
@@ -177,6 +185,27 @@ public class HomeController {
 		 model.addAttribute("longTo", longTo );
 		 model.addAttribute("latTo", latTo );
 		 
+		 String matriceStr = new String("[");
+		 
+		 
+		 for (int i = 0; i < matrice.length; i++) {
+			 matriceStr += "[";
+			 
+			 for (int j = 0; j < matrice[0].length; j++) {
+				matriceStr += matrice[i][j];
+				if(j != matrice[0].length -1)
+					matriceStr += ",";
+			}
+			 matriceStr += "]";
+			 if(i != matrice.length -1)
+				 matriceStr += ",";
+		}
+		 
+		 matriceStr += "]";
+		 
+		 System.out.println(matriceStr);
+		 model.addAttribute("matrix", matriceStr);
+		 
 		
 		return "leaflet";
 		
@@ -186,6 +215,8 @@ public class HomeController {
 	
 	@GetMapping("/recherche")
 	public String recherche(Model model) {
+		
+		
 		
 		model.addAttribute("journeys", listGlobale);
 		return "recherche";
