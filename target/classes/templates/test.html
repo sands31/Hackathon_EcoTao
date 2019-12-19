@@ -9,8 +9,8 @@
 <main class="contianer-fluid">
    <div th:each="journey : ${journeys}">
    	<div class="card">
-   		<ul>
-   			<li>
+   		<ul th:each="element : ${journey}">
+   			<li th:text="${element}">
    		</ul>
    	</div>
    </div>
