@@ -25,7 +25,7 @@ import reactor.core.publisher.Mono;
 public class HomeController {
 
     List<ArrayList<String>> listGlobale = new ArrayList<ArrayList<String>>();
-    List <String > list = new ArrayList<>();
+   
 	
 	
 	
@@ -64,6 +64,7 @@ public class HomeController {
 		}
 	      if(arrayNodeJourneys.isArray()) {
 	          for(JsonNode journey : arrayNodeJourneys) {
+	        	  List <String > list = new ArrayList<>();
 	             System.out.print(journey.get("co2_emission").get("value") +" ");
 	                  list.add(journey.get("co2_emission").get("value").toString());
 						arrayNodeSections =  (ArrayNode) journey.get("sections");
@@ -111,14 +112,15 @@ public class HomeController {
 	       }
 		System.out.println(jsonObject.get("car_direct_path").get("co2_emission").get("value"));
 		System.out.println("-------------------------------------");
-		  for(List p:listGlobale)
-	        {
-	            for(int i=0;i<p.size();i++)
-	               System.out.println("["+listGlobale.indexOf(p)+"]"+"["+ p.indexOf(p.get(i))+"]  ="+p.get(i) );
-	         
+		  for(int i = 0 ; i< listGlobale.size() ; i ++)
+	        {    
+	            for(int j=0; j  < listGlobale.get(i).size();j++) {
+	       
+	            	System.out.print(listGlobale.get(i).get(j) +"  " );	
+	            }
+	            System.out.println(" ");       	         
 	        }
-	
-		
+
 		
 		return jsonObject;
 	}
