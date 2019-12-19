@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -37,9 +38,8 @@ public class HomeController {
 	ObjectMapper objectMapper = new ObjectMapper();
 	
 
-	@GetMapping("/hello")
-	@ResponseBody
-    public JsonNode toHome() {
+	@GetMapping("/request")
+    public String toHome() {
 		WebClient  webclient = WebClient.create(url);
 		Mono<String> call = webclient.get()
                         .uri(uriBuilder-> uriBuilder
@@ -120,8 +120,14 @@ public class HomeController {
 	            }
 	            System.out.println(" ");       	         
 	        }
-
+		  return "redirect:/test";
+	}
+	
+	@GetMapping("/test")
+	public String test(Model model) {
 		
-		return jsonObject;
+		model.addAttribute("journeys", listGlobale);
+		return "test";
+		
 	}
 }
