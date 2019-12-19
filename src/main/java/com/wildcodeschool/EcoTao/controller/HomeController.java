@@ -32,6 +32,8 @@ public class HomeController {
 	
 	private String url = "https://api.navitia.io/v1";
 	private String token ="a3653e1d-06a1-4edc-b768-c9bd561d3251";
+	private String from ="1.92587;47.82710";
+	private String to = "1.90518;47.90639";
 	private JsonNode jsonObject, geoJson  ;
 	private  ArrayNode arrayNodeJourneys,arrayNodeSections;
 	ObjectMapper objectMapper = new ObjectMapper();
@@ -44,8 +46,8 @@ public class HomeController {
 		Mono<String> call = webclient.get()
                         .uri(uriBuilder-> uriBuilder
                         		.path("/coverage/{couverage}/journeys")
-                        		.queryParam("from","1.92587;47.82710")
-                        		.queryParam("to", "1.90518;47.90639")
+                        		.queryParam("from",from)
+                        		.queryParam("to", to )
                         		.queryParam("traveler_type", "standard")
                         		
                         		.build("fr-cen"))		
