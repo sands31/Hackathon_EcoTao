@@ -1,0 +1,42 @@
+.h1Recherche {
+    font-size: 18px;
+    text-align: center;
+}
+
+.h2Recherche {
+    font-size: 18px;
+    text-align: center;
+}
+
+.inputRecherche {
+    width: 90%;
+}
+
+.divRecherche {
+    display: flex;
+    justify-content: center;
+}
+
+.divTrajet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.inputTrajet {
+    width: 90%;
+    margin-top: 10px;
+}
+
+.divButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.divIcon {
+    display: flex;
+    flex-direction: column;
+}
+
