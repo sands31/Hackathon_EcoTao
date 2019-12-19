@@ -1,0 +1,180 @@
+:root {
+    --blanc:#ffffff;
+    --vert:rgb(4, 152, 4);
+    --textshadow: black;
+    --noir:black;  
+}
+
+
+*,*:before,*:after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body {
+    background:var(--blanc);
+    text-shadow: 1px 1px 1px var(--textshadow);
+}
+h1{
+    text-align:center;
+    color:var(--vert);
+    font-family: Georgia;
+}
+#leaderboard{
+    position:relative;
+    width:350px;
+    border:3px solid var(--blanc);
+    border-radius: 20px;
+    padding:10px;
+    background:var(--blanc);
+    left:50%;
+    margin-left:-180px;
+}
+#leaderboard ul{
+    position:relative;
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+#leaderboard ul li{
+    position:absolute;
+    display:block;
+    width:100%;
+    padding:10px;
+    border-radius:5px;
+    background: var(--vert);
+    border-bottom:1px solid var(--vert);
+    border-top:1px solid (--noir);
+    box-shadow: 3px 3px 5px (--textshadow);
+    opacity: 1;
+    transition: top cubic-bezier(1.000, -0.530, 0.405, 1.425) 2s;
+}
+#leaderboard ul li a{
+    display: block;
+    text-decoration: none;
+    font-family:  sans-serif;
+    color:var(--blanc);
+}
+#leaderboard ul li a:hover{
+    text-shadow: 0 0 10px var(--blanc);
+}
+#leaderboard li span {
+    float:right;
+    color:var(--noir);
+    opacity: 1;
+    transition: opacity ease 3s;
+}
+#leaderboard li span:after {
+    content:' CO2 de sauvegarder pour la planéte';
+    color:var(--blanc);
+    font-size:12px;
+}
+#leaderboard .move{
+
+}
+
+#leaderboard .replace{
+    animation: replace 2s;
+    -webkit-animation: replace 2s;
+}
+#leaderboard .move span,#leaderboard .replace span{
+    opacity:0;
+}
+
+@keyframes replace
+{
+    0% {left: -500px;opacity:0;}
+    100% {left: 0px;opacity:1;}
+}
+@-webkit-keyframes replace
+{
+    0% {left: -500px;opacity:0;}
+    100% {left: 0px;opacity:1;}
+}
+
+.quizgame-board{
+  background-color:var(--blanc);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 36px;
+  padding: 2em;
+  -webkit-box-shadow: -8px 9px 5px -1px var(--vert);
+  -moz-box-shadow: -8px 9px 5px -1px var(--vert);
+  box-shadow: -8px 9px 5px -1px var(--vert);
+}
+
+.quizgame-board .quizgame-board-title{
+  text-align: center;
+  font-family: Georgia;
+  padding: 5px;
+  background-color:var(--blanc);
+  font-size: 30px;
+  border-radius: 30px;
+  color: var(--vert);
+  font-weight: 700;
+  width: 200px;
+  vertical-align: middle;
+  left: calc(50% - 100px);
+  top: calc(0% - 30px);
+  display: block;
+  position: relative;
+}
+
+.quizgame-board .quizgame-rank{
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  background: var(--vert);
+  margin: 0.5em;
+  padding: 1em 0.5em;
+  font-size:18px;
+  border-radius: 22px;
+  -webkit-box-shadow: inset 4px 4px 5px -1px var(--noir);
+  -moz-box-shadow: inset 4px 4px 5px -1px var(--noir);
+  box-shadow: inset 4px 4px 5px -1px var(--noir);
+}
+
+.quizgame-board .rank span{
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #D1B395;
+  border-radius: 100%;
+  color: var(--blanc);
+  border: 3px solid var(--blanc);
+}
+
+.quizgame-board .rank-1 span{
+  color: var(--blanc);
+  border: 3px solid var(--blanc);
+  background: #D37A0F;
+}
+
+.quizgame-board .rank-2 span{
+  color: var(--blanc);
+  border: 3px solid var(--blanc);
+  background: #808080;
+}
+
+.quizgame-board .rank-3 span{
+  color: var(--blanc);
+  border: 3px solid var(--blanc);
+  background: #6B1103;
+}
+
+.quizgame-board .quizgame-rank{
+  align-items: center;
+}
+
+.text {
+    color: var(--blanc);
+    text-align: center;
+}
+
+.rang {
+    float: left;
+}
