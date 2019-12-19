@@ -1,12 +1,9 @@
 package com.wildcodeschool.EcoTao.controller;
 
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
 
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +24,8 @@ import reactor.core.publisher.Mono;
 @Controller
 public class HomeController {
 
-
+    List<ArrayList<String>> listGlobale = new ArrayList<ArrayList<String>>();
+    List <String > list = new ArrayList<>();
 	
 	
 	
@@ -67,32 +65,40 @@ public class HomeController {
 	      if(arrayNodeJourneys.isArray()) {
 	          for(JsonNode journey : arrayNodeJourneys) {
 	             System.out.print(journey.get("co2_emission").get("value") +" ");
-	           
+	                  list.add(journey.get("co2_emission").get("value").toString());
 						arrayNodeSections =  (ArrayNode) journey.get("sections");
 						//arrayNodeCor = (ArrayNode) jsonNode.get("sections").get("geojson").get("coordinates");
-						for(JsonNode section : arrayNodeSections) {
+						for(int i = 0  ; i < arrayNodeSections.size() ;i++ ) {
+							 geoJson = arrayNodeSections.get(i).get("geojson");
 							 
-							 geoJson = section.get("geojson");
-							 
-						     if(section.get("type").toString().contains("street_network")) {
-						    	 System.out.print(section.get("mode") + " "); 
+						     if(arrayNodeSections.get(i).get("type").toString().contains("street_network")) {
+						    	 System.out.print(arrayNodeSections.get(i).get("mode") + " "); 
+						    	 list.add(arrayNodeSections.get(i).get("mode").toString());
 						    	 ArrayNode arrayNodeCoordStreet = (ArrayNode) geoJson.get("coordinates");
-						    	 System.out.println(arrayNodeCoordStreet);
+						    	 for(int j = 0; j < arrayNodeCoordStreet.size() ; j++) {
+						    		   for(int k = 0 ; k < 2 ; k++) {
+						    			  // System.out.print( arrayNodeCoordStreet.get(j).get(k) +" ---");
+						    			   
+						    		   }
+						    		 //  System.out.println("");
+						    	 }
 //						    	 String[] temp;
 //						    	 for (JsonNode coord : arrayNodeCoordStreet) {
 //						    		 System.out.print(coord.get("1"));
 //						    	 }
 						    	 
-						     }else if(section.get("type").toString().contains("public_transport"))
+						     }else if(arrayNodeSections.get(i).get("type").toString().contains("public_transport"))
 						     {
-						    	 System.out.print(section.get("display_informations").get("physical_mode") + " ");
+						    	 System.out.print(arrayNodeSections.get(i).get("display_informations").get("physical_mode") + " ");
+						    	 list.add(arrayNodeSections.get(i).get("display_informations").get("physical_mode").toString());
 						    	 ArrayNode arrayNodeCoordPublic = (ArrayNode) geoJson.get("coordinates");
-						    	 System.out.println(arrayNodeCoordPublic);
+						    	// System.out.println(arrayNodeCoordPublic);
 //						    	 for (JsonNode coord : arrayNodeCoordPublic) {
 //						    		 System.out.print(coord.get("1"));
 //						    	 }
 						     }else {
-						    	 System.out.print(section.get("type") + " ");
+						    	 System.out.print(arrayNodeSections.get(i).get("type") + " ");
+						    	 list.add(arrayNodeSections.get(i).get("type").toString());
 						    	
 						     }
 						     
@@ -100,10 +106,19 @@ public class HomeController {
 						}
 			   System.out.println("");
 	         	System.out.println("---------------------------------");
+	         	listGlobale.add((ArrayList<String>) list);
 	          }
 	       }
 		System.out.println(jsonObject.get("car_direct_path").get("co2_emission").get("value"));
+		System.out.println("-------------------------------------");
+		  for(List p:listGlobale)
+	        {
+	            for(int i=0;i<p.size();i++)
+	               System.out.println("["+listGlobale.indexOf(p)+"]"+"["+ p.indexOf(p.get(i))+"]  ="+p.get(i) );
+	         
+	        }
 	
+		
 		
 		return jsonObject;
 	}
