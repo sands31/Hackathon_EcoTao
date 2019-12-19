@@ -67,7 +67,7 @@ public class HomeController {
 	          for(JsonNode journey : arrayNodeJourneys) {
 	        	  List <String > list = new ArrayList<>();
 	             System.out.print(journey.get("co2_emission").get("value") +" ");
-	                  list.add(journey.get("co2_emission").get("value").toString());
+	                  list.add(journey.get("co2_emission").get("value").toString().replace("\"", ""));
 						arrayNodeSections =  (ArrayNode) journey.get("sections");
 						//arrayNodeCor = (ArrayNode) jsonNode.get("sections").get("geojson").get("coordinates");
 						for(int i = 0  ; i < arrayNodeSections.size() ;i++ ) {
@@ -75,7 +75,7 @@ public class HomeController {
 							 
 						     if(arrayNodeSections.get(i).get("type").toString().contains("street_network")) {
 						    	 System.out.print(arrayNodeSections.get(i).get("mode") + " "); 
-						    	 list.add(arrayNodeSections.get(i).get("mode").toString());
+						    	 list.add(arrayNodeSections.get(i).get("mode").toString().replace("\"", ""));
 						    	 ArrayNode arrayNodeCoordStreet = (ArrayNode) geoJson.get("coordinates");
 						    	 for(int j = 0; j < arrayNodeCoordStreet.size() ; j++) {
 						    		   for(int k = 0 ; k < 2 ; k++) {
@@ -92,7 +92,7 @@ public class HomeController {
 						     }else if(arrayNodeSections.get(i).get("type").toString().contains("public_transport"))
 						     {
 						    	 System.out.print(arrayNodeSections.get(i).get("display_informations").get("physical_mode") + " ");
-						    	 list.add(arrayNodeSections.get(i).get("display_informations").get("physical_mode").toString());
+						    	 list.add(arrayNodeSections.get(i).get("display_informations").get("physical_mode").toString().replace("\"", ""));
 						    	 ArrayNode arrayNodeCoordPublic = (ArrayNode) geoJson.get("coordinates");
 						    	// System.out.println(arrayNodeCoordPublic);
 //						    	 for (JsonNode coord : arrayNodeCoordPublic) {
@@ -100,7 +100,7 @@ public class HomeController {
 //						    	 }
 						     }else {
 						    	 System.out.print(arrayNodeSections.get(i).get("type") + " ");
-						    	 list.add(arrayNodeSections.get(i).get("type").toString());
+						    	 list.add(arrayNodeSections.get(i).get("type").toString().replace("\"", ""));
 						    	
 						     }
 						     
