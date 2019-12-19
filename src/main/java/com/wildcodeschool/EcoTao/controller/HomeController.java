@@ -33,7 +33,7 @@ public class HomeController {
 	
 	private String url = "https://api.navitia.io/v1";
 	private String token ="a3653e1d-06a1-4edc-b768-c9bd561d3251";
-	private String from ="1.92587;47.82710";
+	private String from ="1.95814;47.92060";
 	private String to = "1.90518;47.90639";
 	private JsonNode jsonObject, geoJson  ;
 	private  ArrayNode arrayNodeJourneys,arrayNodeSections;
@@ -132,4 +132,26 @@ public class HomeController {
 		return "test";
 		
 	}
+	@GetMapping("/map")
+	public String shoMap(Model model) {
+		  String longFrom = "" ;
+		  String latFrom = "";
+		  String longTo = "" ;
+		  String latTo = "";
+		   longFrom = from.substring(0, 7);
+		   latFrom = from.substring(8,from.length());
+		   longTo = to.substring(0, 7);
+		   latTo = to.substring(8,from.length()); 
+		     
+		 model.addAttribute("longFrom", longFrom );
+		 model.addAttribute("latFrom", latFrom );
+		 model.addAttribute("longTo", longTo );
+		 model.addAttribute("latTo", latTo );
+		 
+		
+		return "leaflet";
+		
+	}
+	
+	
 }
