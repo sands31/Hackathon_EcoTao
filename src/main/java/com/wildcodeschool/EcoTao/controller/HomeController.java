@@ -67,6 +67,7 @@ public class HomeController {
 	      if(arrayNodeJourneys.isArray()) {
 	          for(JsonNode journey : arrayNodeJourneys) {
 	        	  List <String > list = new ArrayList<>();
+	        	  List <String > pathList  = new ArrayList<>();
 
 	             System.out.print(journey.get("co2_emission").get("value") +" ");
 	                  list.add(journey.get("co2_emission").get("value").toString().replace("\"", ""));
