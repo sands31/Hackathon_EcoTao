@@ -215,6 +215,14 @@ public class HomeController {
 		return "leaflet";
 
 	}
+	
+	@GetMapping("/mapEmpty")
+	public String showMapEmpty() {
+
+		
+		return "map.html";
+
+	}
 
 	@GetMapping("/recherche")
 	public String recherche(Model model) {
