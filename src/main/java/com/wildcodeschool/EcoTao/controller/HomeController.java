@@ -28,7 +28,7 @@ public class HomeController {
 	
 	private String url = "https://api.navitia.io/v1";
 	private String token = "a3653e1d-06a1-4edc-b768-c9bd561d3251";
-	private String from = "1.90425;47.89802";
+	private String from = "1.90089;47.86403";
 	private String to = "1.90459;47.89471";
 	private JsonNode jsonObject, geoJson;
 	private ArrayNode arrayNodeJourneys, arrayNodeSections;
@@ -66,10 +66,13 @@ public class HomeController {
 				System.out.print(journey.get("co2_emission").get("value") + " ");
 				double co2 = Double.parseDouble(journey.get("co2_emission").get("value").toString().replace("\"", ""));
 				double ecoCo2 = carCo2 - co2;
+				
 
-				if (ecoCo2 > 0) {
+				
+				if (ecoCo2 >= 0) {
 
 					list.add((int) ecoCo2 + " gEC");
+					
 
 					arrayNodeSections = (ArrayNode) journey.get("sections");
 					// arrayNodeCor = (ArrayNode)
@@ -113,10 +116,14 @@ public class HomeController {
 						}
 
 					}
+					
+					double temps = Double.parseDouble(journey.get("duration").toString().replace("\"", "")) / 60;
+					String tempsString = (int)temps + "min" ;
+					list.add(tempsString);
+					listGlobale.add((ArrayList<String>) list);
+					listGlobalePath.add((ArrayList<String>) pathList);
 				}
 
-				listGlobale.add((ArrayList<String>) list);
-				listGlobalePath.add((ArrayList<String>) pathList);
 			}
 		}
 
