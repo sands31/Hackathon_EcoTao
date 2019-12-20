@@ -10,7 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Sulphur Point', sans-serif;
+  font-family: 'Magra', sans-serif;
 }
 nav {
   height: 13vh;
@@ -132,7 +132,7 @@ h1{
     text-align:center;
     color:white;
     text-shadow: 2px 2px 2px black;
-    font-family: Georgia;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
     margin-top: 20px;
 }
 #leaderboard{
@@ -162,7 +162,7 @@ h1{
 #leaderboard ul li a{
     display: block;
     text-decoration: none;
-    font-family:  sans-serif;
+    font-family: 'Magra', sans-serif;
     color:var(--blanc);
 }
 #leaderboard ul li a:hover{
