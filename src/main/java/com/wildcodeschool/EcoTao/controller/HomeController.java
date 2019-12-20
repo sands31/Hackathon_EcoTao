@@ -28,9 +28,7 @@ public class HomeController {
 	private String url = "https://api.navitia.io/v1";
 	private String token = "a3653e1d-06a1-4edc-b768-c9bd561d3251";
 
-	private String from = "2.06268;47.90576";
-
-
+	private String from = "1.90089;47.86403";
 	private String to = "1.90459;47.89471";
 	private JsonNode jsonObject, geoJson;
 	private ArrayNode arrayNodeJourneys, arrayNodeSections;
@@ -117,9 +115,6 @@ public class HomeController {
 					listGlobale.add((ArrayList<String>) list);
 					listGlobalePath.add((ArrayList<String>) pathList);
 				}
-
-				listGlobale.add((ArrayList<String>) list);
-				listGlobalePath.add((ArrayList<String>) pathList);
 
 			}
 		}
