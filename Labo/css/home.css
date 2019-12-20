@@ -1,17 +1,17 @@
-:root {
-    --blanc:#ffffff;
-    --vert:rgb(4, 152, 4);
-    --textshadow: black;
-    --noir:black;
-    --gris:#d0a545;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Sulphur Point', sans-serif;
 }
+body{
+  background: url("img/background1.jpg");
+}
+h2{
+  font-family: 'Kalam', cursive;
+}
+/*-------------------------------------Header--------------------------------------*/
+
 nav {
   height: 13vh;
   background: #8a7e6e;
@@ -114,162 +114,144 @@ nav {
   z-index: 1;
 }
 
-*,*:before,*:after {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-
-}
-body {
-    	background: 
-      linear-gradient(rgba(5, 5, 5, 0.0),rgba(5, 5, 5, 0.0)), 
-      url(../img/plume-2428666_1920.jpg) no-repeat fixed;
-    background-position: center;
-    background-size: cover;
-    text-shadow: 1px 1px 1px var(--textshadow);
-}
-h1{
-    text-align:center;
-    color:var(--vert);
-    font-family: Georgia;
-    margin-top: 20px;
-}
-#leaderboard{
-    position:relative;
-    width:350px;
-    border-radius: 20px;
-    padding:10px;
-    left:50%;
-    margin-left:-173px;
-}
-#leaderboard ul{
-    position:relative;
-    list-style: none;
-    margin:0;
-    padding:0;
-}
-#leaderboard ul li{
-    position:absolute;
-    display:block;
-    width:100%;
-    padding:10px;
-    border-radius:5px;
-    background-color: rgb(0, 0, 0, 0.5);
-    opacity: 1;
-    transition: top cubic-bezier(1.000, -0.530, 0.405, 1.425) 2s;
-}
-#leaderboard ul li a{
-    display: block;
-    text-decoration: none;
-    font-family:  sans-serif;
-    color:var(--blanc);
-}
-#leaderboard ul li a:hover{
-    text-shadow: 0 0 10px var(--blanc);
-}
-#leaderboard li span {
-    float:right;
-    color:greenyellow;
-    font-weight: 800;
-    opacity: 1;
-    transition: opacity ease 3s;
-}
-#leaderboard li span:after {
-    content:' CO2 de sauvegarder pour la planéte';
-    color:var(--blanc);
-    font-size:12px;
-}
-#leaderboard .move{
-    
-}
-
-#leaderboard .replace{
-    animation: replace 2s;
-    -webkit-animation: replace 2s;
-}
-#leaderboard .move span,#leaderboard .replace span{
-    opacity:0;
-}
-
-@keyframes replace
-{
-    0% {left: -500px;opacity:0;}
-    100% {left: 0px;opacity:1;}
-}
-@-webkit-keyframes replace
-{
-    0% {left: -500px;opacity:0;}
-    100% {left: 0px;opacity:1;}
-}
-
-.quizgame-board{
-  background-color: rgb(0, 0, 0, 0.5);
-  opacity: 1;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 20px;
-  margin-right: 20px;
-  border-radius: 36px;
-  padding: 2em;
-}
-
-
-.quizgame-board .quizgame-rank{
-  font-weight: 100;
-  color: var(--blanc);
-  text-align: center;
-  background-color: rgb(0, 0, 0, 0.5);
-  opacity: 1;
-  margin: 0.5em;
-  padding: 1em 0.5em;
-  font-size:18px;
-  border-radius: 22px;
-
-}
-
-.quizgame-board .rank span{
-  font-size: 25px;
+/*-------------------------------------Compteur--------------------------------------*/
+.compteur_container{
   display: flex;
-  align-items: center;
-  text-align: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: #D1B395;
-  border-radius: 100%;
-  color: var(--blanc);
-  border: 3px solid var(--blanc);
+  margin-top: 40px;
+
+  }
+
+.compteur{
+  border-radius: 10px;
+  border: 2px solid #35b357;
+  width: 250px;
+  text-align: center;
+  padding: 10px;
 }
 
-.quizgame-board .rank-1 span{
-  color: var(--blanc);
-  border: 3px solid var(--vert);
-  background: #D37A0F;
+.earth{
+  font-size: 1.5em;
 }
 
-.quizgame-board .rank-2 span{
-  color: var(--blanc);
-  border: 3px solid var(--vert);
-  background: #808080;
-}
-
-.quizgame-board .rank-3 span{
-  color: var(--blanc);
-  border: 3px solid var(--vert);
-  background: #6B1103;
-}
-
-.quizgame-board .quizgame-rank{
+/*-------------------------------------Application--------------------------------------*/
+.eco_tao{
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  margin-top: 30px;
 }
 
-.text {
-    color: var(--blanc);
-    text-align: center;
+.slogan{
+  text-align: center;
 }
 
-.rang {
-    float: left;
+.carbone{
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.application_bouton{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 150px;
+  margin-top: 10px;
+}
+.description{
+  margin-top: 10px;
+}
+.description p{
+  margin-top: 8px;
+}
+
+.description span{
+  color: #35b357;
+}
+
+
+.use_appli, .inscription {
+	box-shadow: 0px 1px 0px 0px #3dc21b;
+	background:linear-gradient(to bottom, #35b357 5%, #5cbf2a 100%);
+	background-color:#35b357;
+	border-radius:8px;
+	border:1px solid #19c42a;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+  font-size:15px;
+	padding:9px 12px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2f6627;
+}
+.use_appli:hover {
+	background:linear-gradient(to bottom, #5cbf2a 5%, #35b357 100%);
+	background-color:#5cbf2a;
+}
+.use_appli:active {
+	position:relative;
+	top:1px;
+}
+
+/*-------------------------------------Avatar--------------------------------------*/
+.avatar_section h2{
+  text-align:center;
+  color: #35b357;
+  margin-top: 15px;
+}
+
+
+
+.total-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 310px;
+  margin-top: 15px;
+
+}
+
+.total-2a{
+  display: flex;
+  justify-content: center;
+}
+
+.avatar1_span, .avatar2_span, .avatar3_span{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  width: 80px;
+}
+.avatar1{
+  width: 60px;
+  margin-right: 140px;
+  margin-top: 38px;
+  position: absolute;
+}
+
+.avatar2{
+  width: 60px;
+  margin-left: 160px;
+  margin-top: 25px;
+  position: absolute;
+}
+
+.avatar3{
+  width: 90px;
+  margin-top: 42px;
+  position: absolute;
+}
+
+.podium{
+display: flex;
+justify-content: center;
+position: inherit;
+margin-top: 105px;
+}
+.podium img{
+  width: 60%;
 }
 
 /*-------------------------------------footer--------------------------------------*/
@@ -300,7 +282,7 @@ footer{
   background: white;
   width: 70px;
   height: 70px;
-  
+  margin: 0 20px;
   /*border: 2px solid;*/
   border-radius: 50%;
   box-sizing: border-box;
@@ -367,8 +349,7 @@ footer{
   .smedia ul li{
     width: 40px;
     height: 40px;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin: 0 10px;
   }
   .smedia ul li .fab{
     font-size: 20px;
