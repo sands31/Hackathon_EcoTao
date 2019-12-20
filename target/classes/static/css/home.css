@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #34495e;
+  font-family: 'Magra', sans-serif;
+}
+
+body{
+  background: url("../img/background3.jpg");
+  background-size: 100%;
+  background-repeat: space;
+
+}
+
+h2{
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
+
+/*-------------------------------------Header--------------------------------------*/
+
+nav {
+  height: 13vh;
+  background: #8a7e6e;
+  opacity: 0.9;
+  }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  margin-left: auto;
+
+
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.fade {
+  opacity: 1!important;
+}
+@media screen and (max-width: 768px) {
+  .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+  }
+  nav {
+    position: relative;
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 15;
+  }
+
+  .nav-links {
+    position: absolute;
+    background: #8a7e6e;
+    height: 100vh;
+    width: 100%;
+    padding-top: 90px;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+    z-index: 10;
+  }
+
+  .nav-links li {
+    opacity: 0;
+    margin-top: 40px;
+  }
+
+  .nav-links a:hover{
+    color: #FFC312!important;
+    font-size: 1.7em;
+    opacity: 0.9;
+  }
+
+  .nav-links li a {
+    font-size: 25px;
+  }
+
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  li.fade {
+    opacity: 1;
+  }
+}
+
+.tao-logo{
+  margin-top: 25px;
+  margin-left: 25px;
+  width: 100px;
+  position: absolute;
+  z-index: 1;
+}
+
+/*-------------------------------------Compteur--------------------------------------*/
+.compteur_container{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+
+  }
+
+.compteur{
+  border-radius: 10px;
+  border: 2px solid #39bd4f;
+  width: 220px;
+  text-align: center;
+  padding: 5px;
+}
+
+.compteur p span{
+  font-size: 1em;
+}
+.earth{
+  font-size: 1.6em !important;
+}
+
+/*-------------------------------------Application--------------------------------------*/
+.eco_tao{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 190px;
+}
+
+.slogan{
+  text-align: center;
+}
+
+.slogan p{
+  font-size: 1em;
+}
+
+.carbone{
+  font-size: 15px!important;
+  font-weight: bold;
+}
+
+.application_bouton{
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  width: 350px;
+  margin-top: 30px;
+}
+.description{
+  margin-top: 30px;
+}
+.description p{
+  margin-top: 8px;
+  font-size: 1em;
+}
+
+.description span{
+  color: #35b357;
+}
+
+
+.use_appli, .inscription {
+	box-shadow: 0px 1px 0px 0px #3dc21b;
+	background-color:#39bd4f;
+	border-radius:8px;
+	border:1px solid #19c42a;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-size:17px;
+  font-weight: bold;
+	padding:10px 11px;
+	text-decoration:none;
+
+
+}
+.use_appli:hover {
+	background:linear-gradient(to bottom, #5cbf2a 5%, #35b357 100%);
+	background-color:#5cbf2a;
+}
+.use_appli:active {
+	position:relative;
+	top:1px;
+}
+
+/*-------------------------------------Avatar--------------------------------------*/
+.avatar_section h2{
+  text-align:center;
+  color: #39bd4f;
+  margin-top: 25px;
+}
+
+
+
+.total-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 310px;
+  margin-top: 15px;
+
+}
+
+.total-2a{
+  display: flex;
+  justify-content: center;
+}
+
+.avatar1_span, .avatar2_span, .avatar3_span{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  width: 80px;
+}
+.avatar1{
+  width: 60px;
+  margin-right: 140px;
+  margin-top: 38px;
+  position: absolute;
+}
+
+.avatar2{
+  width: 60px;
+  margin-left: 160px;
+  margin-top: 25px;
+  position: absolute;
+}
+
+.avatar3{
+  width: 90px;
+  margin-top: 42px;
+  position: absolute;
+}
+
+.podium{
+display: flex;
+justify-content: center;
+position: inherit;
+margin-top: 105px;
+}
+.podium img{
+  width: 60%;
+}
+
+/*-------------------------------------footer--------------------------------------*/
+
+
+footer{
+  margin-top: 30px;
+  background: #423D35;
+  list-style: none;
+}
+
+.footer-text-area{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.smedia ul{
+  list-style: none;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 15vh;
+}
+
+.smedia ul li{
+  position: relative;
+  background: white;
+  width: 70px;
+  height: 70px;
+  margin: 0 20px;
+  /*border: 2px solid;*/
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: .5s;
+  overflow: hidden;
+}
+
+.smedia ul li .fab{
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .5s;
+}
+
+
+.smedia ul li:nth-child(1) .fab{
+  color: #38A1F3;
+}
+
+.smedia ul li:nth-child(2) .fab{
+  color: #c32aa3;
+}
+
+.smedia ul li:nth-child(3) .fab{
+  color: #0077B5;
+}
+
+.smedia ul li:nth-child(4) .fab{
+  color: #38A1F3;
+}
+
+.smedia ul li:hover:nth-child(1){
+  background: #38A1F3;
+}
+.smedia ul li:hover:nth-child(2){
+  background: #c32aa3;
+}
+.smedia ul li:hover:nth-child(3){
+  background: #0077B5;
+}
+.smedia ul li:hover:nth-child(4){
+  background: #38A1F3;
+}
+
+.smedia ul li .fab:nth-child(1){
+  left: -50%;
+  opacity: 0;
+}
+.smedia ul li:hover .fab:nth-child(1){
+  left: 50%;
+  opacity: 1;
+  color: white;
+}
+.smedia ul li:hover .fab:nth-child(2){
+  left: 50%;
+  opacity: 0;
+}
+
+@media only screen and (max-width: 460px) {
+
+  .smedia ul li{
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+  }
+  .smedia ul li .fab{
+    font-size: 20px;
+  }
+}
+
+.copyright{
+  position: relative;
+  padding-bottom: 25px;
+  text-align: center;
+  color: #d1b67e;
+}

@@ -11,8 +11,4 @@ public class GroupeController {
 		return "groupe";
 	}
 	
-	@GetMapping("/leaderboard")
-	public String leaderboard(Model model) {
-		return "leaderboard";
-	}
 }
