@@ -2,7 +2,8 @@
     --blanc:#ffffff;
     --vert:rgb(4, 152, 4);
     --textshadow: black;
-    --noir:black;  
+    --noir:black;
+    --gris:#d0a545;
 }
 
 * {
@@ -120,21 +121,24 @@ nav {
 
 }
 body {
-    background:var(--blanc);
+    	background: 
+      linear-gradient(rgba(5, 5, 5, 0.0),rgba(5, 5, 5, 0.0)), 
+      url(../img/plume-2428666_1920.jpg) no-repeat fixed;
+    background-position: center;
+    background-size: cover;
     text-shadow: 1px 1px 1px var(--textshadow);
 }
 h1{
     text-align:center;
     color:var(--vert);
     font-family: Georgia;
+    margin-top: 20px;
 }
 #leaderboard{
     position:relative;
     width:350px;
-    border:3px solid var(--blanc);
     border-radius: 20px;
     padding:10px;
-    background:var(--blanc);
     left:50%;
     margin-left:-173px;
 }
@@ -150,10 +154,7 @@ h1{
     width:100%;
     padding:10px;
     border-radius:5px;
-    background: var(--vert);
-    border-bottom:1px solid var(--vert);
-    border-top:1px solid (--noir);
-    box-shadow: 3px 3px 5px (--textshadow);
+    background-color: rgb(0, 0, 0, 0.5);
     opacity: 1;
     transition: top cubic-bezier(1.000, -0.530, 0.405, 1.425) 2s;
 }
@@ -168,7 +169,8 @@ h1{
 }
 #leaderboard li span {
     float:right;
-    color:var(--noir);
+    color:greenyellow;
+    font-weight: 800;
     opacity: 1;
     transition: opacity ease 3s;
 }
@@ -201,47 +203,28 @@ h1{
 }
 
 .quizgame-board{
-  background-color:var(--blanc);
+  background-color: rgb(0, 0, 0, 0.5);
+  opacity: 1;
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 36px;
   padding: 2em;
-  -webkit-box-shadow: -8px 9px 5px -1px var(--vert);
-  -moz-box-shadow: -8px 9px 5px -1px var(--vert);
-  box-shadow: -8px 9px 5px -1px var(--vert);
 }
 
-.quizgame-board .quizgame-board-title{
-  text-align: center;
-  font-family: Georgia;
-  padding: 5px;
-  background-color:var(--blanc);
-  font-size: 30px;
-  border-radius: 30px;
-  color: var(--vert);
-  font-weight: 700;
-  width: 200px;
-  vertical-align: middle;
-  left: calc(50% - 100px);
-  top: calc(0% - 30px);
-  display: block;
-  position: relative;
-}
 
 .quizgame-board .quizgame-rank{
-  font-weight: 700;
-  color: white;
+  font-weight: 100;
+  color: var(--blanc);
   text-align: center;
-  background: var(--vert);
+  background-color: rgb(0, 0, 0, 0.5);
+  opacity: 1;
   margin: 0.5em;
   padding: 1em 0.5em;
   font-size:18px;
   border-radius: 22px;
-  -webkit-box-shadow: inset 4px 4px 5px -1px var(--noir);
-  -moz-box-shadow: inset 4px 4px 5px -1px var(--noir);
-  box-shadow: inset 4px 4px 5px -1px var(--noir);
+
 }
 
 .quizgame-board .rank span{
@@ -260,19 +243,19 @@ h1{
 
 .quizgame-board .rank-1 span{
   color: var(--blanc);
-  border: 3px solid var(--blanc);
+  border: 3px solid var(--vert);
   background: #D37A0F;
 }
 
 .quizgame-board .rank-2 span{
   color: var(--blanc);
-  border: 3px solid var(--blanc);
+  border: 3px solid var(--vert);
   background: #808080;
 }
 
 .quizgame-board .rank-3 span{
   color: var(--blanc);
-  border: 3px solid var(--blanc);
+  border: 3px solid var(--vert);
   background: #6B1103;
 }
 
