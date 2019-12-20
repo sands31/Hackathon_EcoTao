@@ -15,7 +15,7 @@
 
     <header>
 
-        <img class="tao-logo" src="../img/taologo.png" alt="">
+       <a href="/"><img class="tao-logo" src="../img/taologo.png" alt=""></a> 
 
         <nav>
 
@@ -27,11 +27,11 @@
 
             <ul class="nav-links">
                 <li><a href="#">Connectez vous</a></li>
-                <li><a href="#">Recherche</a></li>
+                <li><a href="/mapEmpty">Recherche</a></li>
                 <li><a href="#">Acheter vos billets</a></li>
                 <li><a href="#">Scanner vos billets</a></li>
                 <li><a href="#">Convertir vos points</a></li>
-                <li><a href="#">Challenge eco</a></li>
+                <li><a href="/groupe">Challenge eco</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
@@ -68,7 +68,15 @@
                <form action="/showPath" method="post" class="formClass">
         <button type="submit" class="buttonClass quizgame-rank">
                 <ul th:each="type : ${trajet}">
-                    <li><i th:class="(@{${type.contains('gEC')}}) ? 'fas fa-leaf' : ''"></i> <i th:class="(@{${type}} == 'Bus') ? 'fas fa-bus' : ''"></i> <i th:class="(@{${type}} == 'walking') ? 'fas fa-walking' : ''"></i> <i th:class="(@{${type}} == 'car') ? 'fas fa-car' : ''"></i> <i th:class="(@{${type}} == 'Tramway') ? 'fas fa-subway' : ''"></i> <i th:class="(@{${type}} == 'park') ? 'fas fa-parking' : ''"></i> <i th:class="(@{${type}} == 'bike') ? 'fas fa-bicycle' : ''"></i> <i th:class="(@{${type.contains('min')}}) ? 'fas fa-clock' : ''"></i>
+                    <li><i th:class="(@{${type.contains('gEC')}}) ? 'fas fa-leaf' : ''"></i> 
+                    <i th:class="(@{${type}} == 'Bus') ? 'fas fa-bus' : ''"></i>
+                     <i th:class="(@{${type}} == 'walking') ? 'fas fa-walking' : ''"></i> 
+                     <i th:class="(@{${type}} == 'car') ? 'fas fa-car' : ''"></i> 
+                     <i th:class="(@{${type}} == 'Tramway') ? 'fas fa-subway' : ''"></i> 
+                     <i th:class="(@{${type}} == 'park') ? 'fas fa-parking' : ''"></i> 
+                     <i th:class="(@{${type}} == 'bike') ? 'fas fa-bicycle' : ''"></i> 
+                     <i th:class="(@{${type.contains('min')}}) ? 'fas fa-clock' : ''"></i>
+                     <i th:class="(@{${!type.contains('min')}} and @{${type}} != 'bike' and @{${type}} != 'park' and @{${type}} != 'Tramway' and @{${type}} != 'car' and @{${type}} != 'walking' and @{${type}} != 'Bus' and @{${!type.contains('gEC')}}) ? 'fas fa-random' : ''"></i>
                     </li>
                     <li th:text="(@{${type.contains('gEC')}} or @{${type.contains('min')}}) ? ${type} : ''"></li>
                 </ul>

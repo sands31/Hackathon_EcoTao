@@ -263,7 +263,7 @@ public class HomeController {
 			model.addAttribute("matrix", matriceStr);
 		
 		
-		return "leaflet";
+		return "map";
 	}
 
 }
