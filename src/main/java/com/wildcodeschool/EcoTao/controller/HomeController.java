@@ -1,6 +1,8 @@
 package com.wildcodeschool.EcoTao.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -121,6 +123,14 @@ public class HomeController {
 								|| list.get(i).contains("demand") || list.get(i).contains("transfer"))
 							list.remove(i);
 					}
+					
+//					Comparator <String> comparator = new Comparator <String> () {
+//						@Override
+//						public int compare(String string1, String string2) {
+//							return string1.compareTo(string2);
+//						}
+//					};
+//					Collections.sort(listGlobale, comparator);
 
 					listGlobale.add((ArrayList<String>) list);
 					listGlobalePath.add((ArrayList<String>) pathList);
