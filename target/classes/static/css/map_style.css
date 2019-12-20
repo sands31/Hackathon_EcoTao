@@ -11,7 +11,7 @@ h2{
 }
 
 /*-------------------------------------Header--------------------------------------*/
-#map { z-index: -200;
+#map { z-index: 0;
 	   position: relative;
 	   height: 80vh;
 	}
@@ -119,7 +119,7 @@ nav {
 
 /*-------------------------------------bouton recherche--------------------------------------*/
 
-form{
+.research_bouton {
     position: absolute;
     top: 13%;
     left: 50%;
@@ -132,6 +132,7 @@ form{
     border-radius: 25px;
     border: 4px solid white;
     padding: 5px;
+    z-index:10;
 
 }
 
@@ -179,11 +180,6 @@ form:hover .fa{
     color: white;
 }
 
-/*-------------------------------------Map--------------------------------------*/
-
-#mapid{
-  height:calc(100vh - 210px);
-}
 /*-------------------------------------footer--------------------------------------*/
 
 
