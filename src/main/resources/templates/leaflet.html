@@ -17,12 +17,12 @@
 	
 	 <div id="map"></div>
 	 
-	 
-	 <div th:text ="${longFrom}"  id="longFrom"></div>
+	 <div style="display:none">
+	 <div  th:text ="${longFrom}"  id="longFrom"></div>
 	 <div th:text ="${latFrom}" id="latFrom"></div>
 	 <div th:text ="${longTo} "  id="longTo"></div>
 	 <div th:text ="${latTo}"  id="latTo"></div>
-	  <div th:text ="${matrix}"  id="matrix"></div>
+	 </div>
 
 </body>
 
@@ -32,8 +32,6 @@
       /*<![CDATA[*/
 	    
          var matrix = JSON.parse(/*[[${matrix}]]*/);
-      
-      
 
        /*]]>*/
 </script> 

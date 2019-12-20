@@ -29,8 +29,8 @@
             </div>
 
      <div class="containerCards"> 
-         <div th:each="trajet : ${journeys}">
-         <div class="Card"> 
+         <div th:each="trajet,iter : ${journeys}" >
+         <div class="Card"  > 
          <ul th:each="type : ${trajet}">
             <li>
             	<i th:class="(@{${type.contains('gEC')}}) ? 'fas fa-leaf' : ''"></i>
@@ -42,6 +42,10 @@
             </li>
        	  	<li th:text="${type}"></li>
          </ul>
+         	<form action="/showPath" method="get">
+       	  	     <input th:value="${iter.index}" name = "index" type="hidden">
+       	  	    <button type="submit" >show the Path</button>
+       	  	</form>
          </div>
 </div>
 <div class="Card">
