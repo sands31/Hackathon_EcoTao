@@ -176,7 +176,7 @@ h1{
     transition: opacity ease 3s;
 }
 #leaderboard li span:after {
-    content:' CO2 de sauvegarder pour la planéte';
+    content:' gEC CO2 sauvegardés pour la planète';
     color:var(--blanc);
     font-size:12px;
 }
