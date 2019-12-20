@@ -2,18 +2,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Sulphur Point', sans-serif;
+  color: #34495e;
+  font-family: 'Magra', sans-serif;
+}
+
+body{
+  background: url("../img/background3.jpg");
+  background-size: 100%;
+  background-repeat: space;
+
 }
 
 h2{
-  font-family: 'Kalam', cursive;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
 }
+
 /*-------------------------------------Header--------------------------------------*/
 
 nav {
   height: 13vh;
   background: #8a7e6e;
-  opacity: 1;
+  opacity: 0.9;
   }
 
 .nav-links {
@@ -116,20 +125,23 @@ nav {
 .compteur_container{
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 15px;
 
   }
 
 .compteur{
   border-radius: 10px;
-  border: 2px solid #35b357;
-  width: 250px;
+  border: 2px solid #39bd4f;
+  width: 220px;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
 }
 
+.compteur p span{
+  font-size: 1em;
+}
 .earth{
-  font-size: 1.5em;
+  font-size: 1.6em !important;
 }
 
 /*-------------------------------------Application--------------------------------------*/
@@ -137,30 +149,35 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 190px;
 }
 
 .slogan{
   text-align: center;
 }
 
+.slogan p{
+  font-size: 1em;
+}
+
 .carbone{
-  font-size: 10px;
+  font-size: 15px!important;
   font-weight: bold;
 }
 
 .application_bouton{
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
-  height: 150px;
-  margin-top: 10px;
+  height: 40px;
+  width: 350px;
+  margin-top: 30px;
 }
 .description{
-  margin-top: 10px;
+  margin-top: 30px;
 }
 .description p{
   margin-top: 8px;
+  font-size: 1em;
 }
 
 .description span{
@@ -170,17 +187,18 @@ nav {
 
 .use_appli, .inscription {
 	box-shadow: 0px 1px 0px 0px #3dc21b;
-	background:linear-gradient(to bottom, #35b357 5%, #5cbf2a 100%);
-	background-color:#35b357;
+	background-color:#39bd4f;
 	border-radius:8px;
 	border:1px solid #19c42a;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-  font-size:15px;
-	padding:9px 12px;
+  font-size:17px;
+  font-weight: bold;
+	padding:8px 11px;
 	text-decoration:none;
-	text-shadow:0px -1px 0px #2f6627;
+
+
 }
 .use_appli:hover {
 	background:linear-gradient(to bottom, #5cbf2a 5%, #35b357 100%);
@@ -194,8 +212,8 @@ nav {
 /*-------------------------------------Avatar--------------------------------------*/
 .avatar_section h2{
   text-align:center;
-  color: #35b357;
-  margin-top: 15px;
+  color: #39bd4f;
+  margin-top: 25px;
 }
 
 
@@ -219,7 +237,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 12px;
+  font-size: 15px;
   width: 80px;
 }
 .avatar1{
@@ -358,5 +376,5 @@ footer{
   position: relative;
   padding-bottom: 25px;
   text-align: center;
-  color: #D6A12A;
+  color: #d1b67e;
 }

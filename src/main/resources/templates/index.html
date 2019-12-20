@@ -2,15 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/home.css">
-    <script src="https://kit.fontawesome.com/11eaeeb5ce.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Magra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/47ff173283.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/home.css">
     <title></title>
   </head>
   <body>
+
     <header>
-      <img class="tao-logo" src="img/taologo.png" alt="">
+      <img class="tao-logo" src="../static/img/taologo.png" alt="">
       <nav>
 
           <div class="hamburger">
@@ -32,54 +33,56 @@
 
     </header>
 
-    <div class="compteur_container">
-      <div class="compteur">
-        <p>
-        <span class="earth">&#127758;</span>
-        <span>-</span>
-        <span id="compteur"></span>
-        <span>de Co<span class="carbone">2</span> émis</span>
-        </p>
-      </div>
-    </div>
-
-    <section class="eco_tao">
-
-      <div class="slogan">
-        <p>Avec EcoTao, changeons les choses ensemble</p>
-      </div>
-
-      <div class="application_bouton">
-        <a href="#" class="use_appli">Utiliser l'appli</a>
-        <a href="#" class="inscription">inscrivez vous</a>
-      </div>
-
-      <div class="description">
-        <p><span>&#10004; </span>Optimiser vos trajets</p>
-        <p><span>&#10004; </span>Trouvez votre itinéraire le plus écolo</p>
-        <p><span>&#10004; </span>Challenger vos proches</p>
-      </div>
-
-    </section>
-
-    <script src="js/app.js"></script>
-
-    <section class="avatar_section">
-      <h2>Les EcoTao du mois</h2>
-      <div class="total-2">
-        <div class="total-2a">
-
-        <p class="avatar1_span"><span>Daniel</span><img  class="avatar2" src="img/avatar2.gif" alt=""></p>
-        <p class="avatar2_span"><span>Sandra</span><img class="avatar1" src="img/avatar1.gif" alt=""></p>
-        <p class="avatar3_span"><span>Omar</span><img class="avatar3" src="img/avatar3.gif" alt=""></p>
-
-
+      <div class="compteur_container">
+        <div class="compteur">
+          <p>
+          <span class="earth">&#127758; </span>
+          <span>moins de </span>
+          <span id="compteur"></span>
+          <span>de CO<span class="carbone">2</span> émis</span>
+          </p>
         </div>
-          <div class="podium">
-            <img src="img/podium.png" alt="">
-          </div>
       </div>
-    </section>
+
+      <section class="eco_tao">
+
+        <div class="slogan">
+          <p>Avec EcoTao, changeons les choses ensemble</p>
+        </div>
+
+        <div class="application_bouton">
+          <a href="#" class="use_appli">Utiliser l'appli</a>
+          <a href="#" class="inscription">inscrivez vous</a>
+        </div>
+
+        <div class="description">
+          <p><span>&#10004; </span>Optimiser vos trajets</p>
+          <p><span>&#10004; </span>Trouvez votre itinéraire le plus écolo</p>
+          <p><span>&#10004; </span>Challenger vos proches</p>
+        </div>
+
+      </section>
+
+
+      <section class="avatar_section">
+        <h2>Les EcoTao du mois</h2>
+        <div class="total-2">
+          <div class="total-2a">
+
+          <p class="avatar1_span"><span>Daniel</span><img  class="avatar2" src="../static/img/avatar2.gif" alt=""></p>
+          <p class="avatar2_span"><span>Sandra</span><img class="avatar1" src="../static/img/avatar1.gif" alt=""></p>
+          <p class="avatar3_span"><span>Omar</span><img class="avatar3" src="../static/img/avatar3.gif" alt=""></p>
+
+
+          </div>
+            <div class="podium">
+              <img src="../static/img/podium.png" alt="">
+            </div>
+        </div>
+      </section>
+
+
+
 
     <footer>
 
@@ -117,13 +120,13 @@
 
 
     </footer>
-
+    <script src="../static/js/app.js"></script>
     <script>
     var i=0;
-var timer = setInterval(function(){ document.querySelector("#compteur").textContent = i++;
-                           if(i>1000){                 clearInterval(timer);
-document.querySelector("#compteur").classList.add("end");
-}                                      }, 1000);
+    var timer = setInterval(function(){ document.querySelector("#compteur").textContent = i++;
+    if(i>1000){                 clearInterval(timer);
+    document.querySelector("#compteur").classList.add("end");
+    }                                      }, 1000);
     </script>
 
   </body>

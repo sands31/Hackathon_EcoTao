@@ -2,27 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #34495e;
-  font-family: 'Magra', sans-serif;
+  font-family: 'Sulphur Point', sans-serif;
 }
-
 body{
-  background: url("../img/background3.jpg");
-  background-size: 100%;
-  background-repeat: space;
-
+  background: url("img/background1.jpg");
 }
-
 h2{
-  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-family: 'Kalam', cursive;
 }
-
 /*-------------------------------------Header--------------------------------------*/
 
 nav {
   height: 13vh;
   background: #8a7e6e;
-  opacity: 0.9;
+  opacity: 1;
   }
 
 .nav-links {
@@ -125,23 +118,20 @@ nav {
 .compteur_container{
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 40px;
 
   }
 
 .compteur{
   border-radius: 10px;
-  border: 2px solid #39bd4f;
-  width: 220px;
+  border: 2px solid #35b357;
+  width: 250px;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
 }
 
-.compteur p span{
-  font-size: 1em;
-}
 .earth{
-  font-size: 1.6em !important;
+  font-size: 1.5em;
 }
 
 /*-------------------------------------Application--------------------------------------*/
@@ -149,35 +139,30 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 190px;
+  margin-top: 30px;
 }
 
 .slogan{
   text-align: center;
 }
 
-.slogan p{
-  font-size: 1em;
-}
-
 .carbone{
-  font-size: 15px!important;
+  font-size: 10px;
   font-weight: bold;
 }
 
 .application_bouton{
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  height: 40px;
-  width: 350px;
-  margin-top: 30px;
+  height: 150px;
+  margin-top: 10px;
 }
 .description{
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .description p{
   margin-top: 8px;
-  font-size: 1em;
 }
 
 .description span{
@@ -187,18 +172,17 @@ nav {
 
 .use_appli, .inscription {
 	box-shadow: 0px 1px 0px 0px #3dc21b;
-	background-color:#39bd4f;
+	background:linear-gradient(to bottom, #35b357 5%, #5cbf2a 100%);
+	background-color:#35b357;
 	border-radius:8px;
 	border:1px solid #19c42a;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-  font-size:17px;
-  font-weight: bold;
-	padding:8px 11px;
+  font-size:15px;
+	padding:9px 12px;
 	text-decoration:none;
-
-
+	text-shadow:0px -1px 0px #2f6627;
 }
 .use_appli:hover {
 	background:linear-gradient(to bottom, #5cbf2a 5%, #35b357 100%);
@@ -212,8 +196,8 @@ nav {
 /*-------------------------------------Avatar--------------------------------------*/
 .avatar_section h2{
   text-align:center;
-  color: #39bd4f;
-  margin-top: 25px;
+  color: #35b357;
+  margin-top: 15px;
 }
 
 
@@ -237,7 +221,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 15px;
+  font-size: 12px;
   width: 80px;
 }
 .avatar1{
@@ -376,5 +360,5 @@ footer{
   position: relative;
   padding-bottom: 25px;
   text-align: center;
-  color: #d1b67e;
+  color: #D6A12A;
 }

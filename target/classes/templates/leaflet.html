@@ -22,10 +22,21 @@
 	 <div th:text ="${latFrom}" id="latFrom"></div>
 	 <div th:text ="${longTo} "  id="longTo"></div>
 	 <div th:text ="${latTo}"  id="latTo"></div>
+	  <div th:text ="${matrix}"  id="matrix"></div>
+
 </body>
 
 
+<script th:inline="javascript">
 
+      /*<![CDATA[*/
+	    
+         var matrix = JSON.parse(/*[[${matrix}]]*/);
+      
+      
+
+       /*]]>*/
+</script> 
 
 
 <script src="js/map.js"></script>
