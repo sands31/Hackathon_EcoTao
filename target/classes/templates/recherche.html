@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" dir="ltr">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Page de recherche</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Magra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/47ff173283.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="../css/recherche.css">
+    <title></title>
 </head>
 
 <body>
 
     <header>
-        <img class="tao-logo" src="/img/taologo.png" alt="">
+
+        <img class="tao-logo" src="../img/taologo.png" alt="">
+
         <nav>
 
             <div class="hamburger">
@@ -33,85 +38,132 @@
 
     </header>
 
-    <h1 class="h1Recherche">Recherche par lieux</h1>
-    <div>
-        <form class="divRecherche">
-            <input class="inputRecherche" name="Lieu" type="text" placeholder="Ecrivez l'adresse" required autofocus>
-        </form>
-    </div>
-    <h2 class="h2Recherche">Trouvez votre trajet</h2>
-
-    <div>
-        <form class="divTrajet">
-            <input class="inputTrajet" name="Lieu" type="text" placeholder="Départ" required autofocus>
-            <input class="inputTrajet" name="Lieu" type="text" placeholder="Arrivé" required autofocus>
-        </form>
-    </div>
-    <div class="divButton">
-        <a href="/request">Rechercher</a>
-        <button></button>
-    </div>
-
-    <div class="containerCards">
-        <div th:each="trajet : ${journeys}" class="Card">
-            <ul th:each="type : ${trajet}">
-                <li><i th:class="(@{${type.contains('gEC')}}) ? 'fas fa-leaf' : ''"></i> <i th:class="(@{${type}} == 'Bus') ? 'fas fa-bus' : ''"></i> <i th:class="(@{${type}} == 'walking') ? 'fas fa-walking' : ''"></i> <i th:class="(@{${type}} == 'car') ? 'fas fa-car' : ''"></i> <i th:class="(@{${type}} == 'Tramway') ? 'fas fa-subway' : ''"></i> <i th:class="(@{${type}} == 'park') ? 'fas fa-parking' : ''"></i> <i th:class="(@{${type}} == 'bike') ? 'fas fa-bicycle' : ''"></i> <i th:class="(@{${type.contains('min')}}) ? 'fas fa-clock' : ''"></i>
-                </li>
-                <li th:text="${type}"></li>
-                <li>></li>
-            </ul>
+    <main class="searchPage">
+        <h1 class="h1Recherche">Recherche par lieux</h1>
+        <div>
+            <form class="divRecherche">
+                <input class="inputRecherche" name="Lieu" type="text" placeholder="Ecrivez l'adresse" required autofocus>
+            </form>
         </div>
-    </div>
+        <h2 class="h2Recherche">Trouvez votre trajet</h2>
 
-    <div class="containerCards">
-        <div class="Card">
-            <ul>
-                <li><i class="fas fa-leaf"></i></li>
-                <li>831 gEC</li>
-                <li>></li>
-            </ul>
-            <ul>
-                <li><i class="fas fa-walking"></i></li>
-                <li>walking</li>
-                <li>></li>
-            </ul>
-            <ul>
-                <li><i class="fas fa-car"></i></li>
-                <li>car</li>
-                <li>></li>
-            </ul>
-            <ul>
-                <li><i class="fas fa-subway"></i></li>
-                <li>subway</li>
-                <li>></li>
-            </ul>
+        <div>
+            <form class="divTrajet">
+                <input class="inputTrajet" name="Lieu" type="text" placeholder="Départ" required autofocus>
+                <input class="inputTrajet" name="Lieu" type="text" placeholder="Arrivé" required autofocus>
+            </form>
         </div>
-    </div>
+        <div class="divButton">
+            <button>
+            <a href="/request" class="searchButton">Rechercher</a>
+                
+            </button>
+        </div>
 
-    <div class="containerCards">
-        <div class="Card">
-            <ul>
-                <li><i class="fas fa-leaf"></i></li>
-                <li>831 gEC</li>
-                <li>></li>
-            </ul>
-            <ul>
-                <li><i class="fas fa-walking"></i></li>
-                <li>walking</li>
-                <li>></li>
-            </ul>
-            <ul>
-                <li><i class="fas fa-car"></i></li>
-                <li>car</li>
-                <li>></li>
-            </ul>
-            <ul>
-                <li><i class="fas fa-subway"></i></li>
-                <li>subway</li>
-                <li>></li>
-            </ul>
+        <div class="containerCards smedia">
+            <div th:each="trajet : ${journeys}" class="journeys">
+                <ul th:each="type : ${trajet}">
+                    <li><i th:class="(@{${type.contains('gEC')}}) ? 'fas fa-leaf' : ''"></i> <i th:class="(@{${type}} == 'Bus') ? 'fas fa-bus' : ''"></i> <i th:class="(@{${type}} == 'walking') ? 'fas fa-walking' : ''"></i> <i th:class="(@{${type}} == 'car') ? 'fas fa-car' : ''"></i> <i th:class="(@{${type}} == 'Tramway') ? 'fas fa-subway' : ''"></i> <i th:class="(@{${type}} == 'park') ? 'fas fa-parking' : ''"></i> <i th:class="(@{${type}} == 'bike') ? 'fas fa-bicycle' : ''"></i> <i th:class="(@{${type.contains('min')}}) ? 'fas fa-clock' : ''"></i>
+                    </li>
+                    <li th:text="(@{${type.contains('gEC')}} or @{${type.contains('min')}}) ? ${type} : ''"></li>
+                </ul>
+            </div>
         </div>
-    </div>
+
+        <div class="containerCards smedia">
+            <div class="journeys">
+                <ul>
+                    <li><i class="fas fa-leaf"></i></li>
+                    <li>831 gEC</li>
+                </ul>
+                <ul>
+                    <li><i class="fas fa-walking"></i></li>
+                    <li>walking</li>
+                </ul>
+                <ul>
+                    <li><i class="fas fa-car"></i></li>
+                    <li>car</li>
+                </ul>
+                <ul>
+                    <li><i class="fas fa-subway"></i></li>
+                    <li>subway</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="containerCards smedia">
+            <div class="journeys">
+                <ul>
+                    <li><i class="fas fa-leaf"></i></li>
+                    <li>831 gEC</li>
+                </ul>
+                <ul>
+                    <li><i class="fas fa-walking"></i></li>
+                    <li>walking</li>
+                </ul>
+                <ul>
+                    <li><i class="fas fa-car"></i></li>
+                    <li>car</li>            
+                </ul>
+                <ul>
+                    <li><i class="fas fa-subway"></i></li>
+                    <li>subway</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <footer>
+
+        <div class="footer">
+
+            <div class="smedia">
+                <ul>
+
+                    <li>
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-facebook-f"></i>
+                    </li>
+
+                    <li>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram"></i>
+                    </li>
+
+                    <li>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-twitter"></i>
+                    </li>
+
+                    <li>
+                        <i class="fab fa-linkedin-in"></i>
+                        <i class="fab fa-linkedin-in"></i>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="copyright">© 2019 www.reseau-tao.fr</div>
+
+        </div>
+
+
+    </footer>
+    <script src="../js/app.js"></script>
+    <script>
+        var i = 0;
+        var timer = setInterval(function() {
+            document.querySelector("#compteur").textContent = i++;
+            if (i > 1000) {
+                clearInterval(timer);
+                document.querySelector("#compteur").classList.add("end");
+            }
+        }, 1000);
+    </script>
+
 </body>
 
 </html>

@@ -20,12 +20,10 @@ import reactor.core.publisher.Mono;
 @Controller
 public class HomeController {
 
+	List<ArrayList<String>> listGlobale = new ArrayList<ArrayList<String>>();
+	List<ArrayList<String>> listGlobalePath = new ArrayList<ArrayList<String>>();
+	Double matrice[][];
 
-    List<ArrayList<String>> listGlobale = new ArrayList<ArrayList<String>>();
-    List<ArrayList<String>> listGlobalePath = new ArrayList<ArrayList<String>>();
-    Double matrice[][];
-	
-	
 	private String url = "https://api.navitia.io/v1";
 	private String token = "a3653e1d-06a1-4edc-b768-c9bd561d3251";
 	private String from = "1.90089;47.86403";
@@ -66,13 +64,10 @@ public class HomeController {
 				System.out.print(journey.get("co2_emission").get("value") + " ");
 				double co2 = Double.parseDouble(journey.get("co2_emission").get("value").toString().replace("\"", ""));
 				double ecoCo2 = carCo2 - co2;
-				
 
-				
 				if (ecoCo2 >= 0) {
 
 					list.add((int) ecoCo2 + " gEC");
-					
 
 					arrayNodeSections = (ArrayNode) journey.get("sections");
 					// arrayNodeCor = (ArrayNode)
@@ -116,10 +111,17 @@ public class HomeController {
 						}
 
 					}
-					
+
 					double temps = Double.parseDouble(journey.get("duration").toString().replace("\"", "")) / 60;
-					String tempsString = (int)temps + "min" ;
+					String tempsString = (int) temps + "min";
 					list.add(tempsString);
+
+					for (int i = 0; i < list.size(); i++) {
+						if (list.get(i).contains("bss") || list.get(i).contains("waiting")
+								|| list.get(i).contains("demand") || list.get(i).contains("transfer"))
+							list.remove(i);
+					}
+
 					listGlobale.add((ArrayList<String>) list);
 					listGlobalePath.add((ArrayList<String>) pathList);
 				}
@@ -136,7 +138,7 @@ public class HomeController {
 		}
 
 		for (int i = 0; i < listGlobalePath.size(); i++) {
-			 matrice= new Double[listGlobalePath.get(i).size() / 2][2];
+			matrice = new Double[listGlobalePath.get(i).size() / 2][2];
 			int k = 0;
 			for (int j = 0; j < listGlobalePath.get(i).size() - 1; j += 2) {
 
@@ -166,42 +168,39 @@ public class HomeController {
 	@GetMapping("/map")
 	public String shoMap(Model model) {
 
-		  String longFrom = "" ;
-		  String latFrom = "";
-		  String longTo = "" ;
-		  String latTo = "";
-		   longFrom = from.substring(0, 7);
-		   latFrom = from.substring(8,from.length());
-		   longTo = to.substring(0, 7);
-		   latTo = to.substring(8,from.length()); 
-		     
-		 model.addAttribute("longFrom", longFrom );
-		 model.addAttribute("latFrom", latFrom );
-		 model.addAttribute("longTo", longTo );
-		 model.addAttribute("latTo", latTo );
-		 
-		 String matriceStr = new String("[");
-		 
-		 
-		 for (int i = 0; i < matrice.length; i++) {
-			 matriceStr += "[";
-			 
-			 for (int j = 0; j < matrice[0].length; j++) {
+		String longFrom = "";
+		String latFrom = "";
+		String longTo = "";
+		String latTo = "";
+		longFrom = from.substring(0, 7);
+		latFrom = from.substring(8, from.length());
+		longTo = to.substring(0, 7);
+		latTo = to.substring(8, from.length());
+
+		model.addAttribute("longFrom", longFrom);
+		model.addAttribute("latFrom", latFrom);
+		model.addAttribute("longTo", longTo);
+		model.addAttribute("latTo", latTo);
+
+		String matriceStr = new String("[");
+
+		for (int i = 0; i < matrice.length; i++) {
+			matriceStr += "[";
+
+			for (int j = 0; j < matrice[0].length; j++) {
 				matriceStr += matrice[i][j];
-				if(j != matrice[0].length -1)
+				if (j != matrice[0].length - 1)
 					matriceStr += ",";
 			}
-			 matriceStr += "]";
-			 if(i != matrice.length -1)
-				 matriceStr += ",";
+			matriceStr += "]";
+			if (i != matrice.length - 1)
+				matriceStr += ",";
 		}
-		 
-		 matriceStr += "]";
-		 
-		 System.out.println(matriceStr);
-		 model.addAttribute("matrix", matriceStr);
-		 
-		
+
+		matriceStr += "]";
+
+		System.out.println(matriceStr);
+		model.addAttribute("matrix", matriceStr);
 
 		return "leaflet";
 
