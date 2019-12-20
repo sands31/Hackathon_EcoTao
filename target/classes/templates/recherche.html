@@ -42,7 +42,7 @@
             </li>
        	  	<li th:text="${type}"></li>
          </ul>
-         	<form action="/showPath" method="get">
+         	<form action="/showPath" method="post">
        	  	     <input th:value="${iter.index}" name = "index" type="hidden">
        	  	    <button type="submit" >show the Path</button>
        	  	</form>
