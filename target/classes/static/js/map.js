@@ -15,8 +15,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.marker([latFrom, longFrom]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
-L.marker([latTo,longTo]).addTo(map).bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
+    .bindPopup('From');
+L.marker([latTo,longTo]).addTo(map).bindPopup('To');
 var polyline = L.polyline(matrix, {color: 'red'}).addTo(map);
 map.fitBounds(polyline.getBounds());
 console.log(latlong);
