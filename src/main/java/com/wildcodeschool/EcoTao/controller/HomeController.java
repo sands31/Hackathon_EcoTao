@@ -30,15 +30,17 @@ public class HomeController {
 	private String url = "https://api.navitia.io/v1";
 	private String token = "a3653e1d-06a1-4edc-b768-c9bd561d3251";
 
-	private String from = "1.90089;47.86403";
-	private String to = "1.90459;47.89471";
+	private static String from = "";
+	private static String to = "";
 	private JsonNode jsonObject, geoJson;
 	private ArrayNode arrayNodeJourneys, arrayNodeSections;
 	private double carCo2;
 	ObjectMapper objectMapper = new ObjectMapper();
 
 	@GetMapping("/request")
-	public String toHome() {
+	public String toHome(@RequestParam String from , @RequestParam String to) {
+		this.from = from;
+		this.to = to;
 		this.listGlobale.clear();
 		this.carCo2 = 0;
 		WebClient webclient = WebClient.create(url);
@@ -210,7 +212,7 @@ public class HomeController {
 
 	@GetMapping("/recherche")
 	public String recherche(Model model) {
-
+       
 		model.addAttribute("journeys", listGlobale);
 		return "recherche";
 

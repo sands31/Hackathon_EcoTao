@@ -48,14 +48,18 @@
         <h2 class="h2Recherche">Trouvez votre trajet</h2>
 
         <div>
-            <form class="divTrajet">
-                <input class="inputTrajet" name="Lieu" type="text" placeholder="Départ" required autofocus>
-                <input class="inputTrajet" name="Lieu" type="text" placeholder="Arrivé" required autofocus>
+            <form  method="get" action="/request">
+            <div class="divTrajet">
+            
+                <input class="inputTrajet" name="from" type="text" placeholder="Départ" required autofocus>
+                <input class="inputTrajet" name="to" type="text" placeholder="Arrivé" required autofocus>
+            </div>
+                <div class="application_bouton buttonPremier">
+                  <button type="submit" class="use_appli">Rechercher</button>
+              </div>
             </form>
         </div>
-        <div class="application_bouton buttonPremier">
-          <a href="/request" class="use_appli">Rechercher</a>
-        </div>
+        
        
 
       
