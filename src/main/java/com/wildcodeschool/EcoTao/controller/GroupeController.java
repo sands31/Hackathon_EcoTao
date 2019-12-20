@@ -10,4 +10,9 @@ public class GroupeController {
 	public String groupe(Model model) {
 		return "groupe";
 	}
+	
+	@GetMapping("/leaderboard")
+	public String leaderboard(Model model) {
+		return "leaderboard";
+	}
 }

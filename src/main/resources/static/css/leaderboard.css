@@ -126,11 +126,12 @@ body {
       url(../img/plume-2428666_1920.jpg) no-repeat fixed;
     background-position: center;
     background-size: cover;
-    text-shadow: 1px 1px 1px var(--textshadow);
+
 }
 h1{
     text-align:center;
-    color:var(--vert);
+    color:white;
+    text-shadow: 2px 2px 2px black;
     font-family: Georgia;
     margin-top: 20px;
 }
