@@ -10,4 +10,5 @@ public class GroupeController {
 	public String groupe(Model model) {
 		return "groupe";
 	}
+	
 }

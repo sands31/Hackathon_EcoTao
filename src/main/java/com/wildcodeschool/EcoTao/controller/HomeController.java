@@ -1,6 +1,7 @@
 package com.wildcodeschool.EcoTao.controller;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -65,13 +66,10 @@ public class HomeController {
 				List<String> pathList = new ArrayList<>();
 				double co2 = Double.parseDouble(journey.get("co2_emission").get("value").toString().replace("\"", ""));
 				double ecoCo2 = carCo2 - co2;
-				
 
-				
 				if (ecoCo2 >= 0) {
 
 					list.add((int) ecoCo2 + " gEC");
-					
 
 					arrayNodeSections = (ArrayNode) journey.get("sections");
 					// arrayNodeCor = (ArrayNode)
@@ -109,10 +107,25 @@ public class HomeController {
 						}
 
 					}
-					
+
 					double temps = Double.parseDouble(journey.get("duration").toString().replace("\"", "")) / 60;
-					String tempsString = (int)temps + "min" ;
+					String tempsString = (int) temps + "min";
 					list.add(tempsString);
+
+					for (int i = 0; i < list.size(); i++) {
+						if (list.get(i).contains("bss") || list.get(i).contains("waiting")
+								|| list.get(i).contains("demand") || list.get(i).contains("transfer"))
+							list.remove(i);
+					}
+					
+//					Comparator <String> comparator = new Comparator <String> () {
+//						@Override
+//						public int compare(String string1, String string2) {
+//							return string1.compareTo(string2);
+//						}
+//					};
+//					Collections.sort(listGlobale, comparator);
+
 					listGlobale.add((ArrayList<String>) list);
 					listGlobalePath.add((ArrayList<String>) pathList);
 				}
@@ -120,7 +133,9 @@ public class HomeController {
 			}
 		}
 
+
 		for (int i = 0; i < 1; i++) {
+
 			matrice = new Double[listGlobalePath.get(i).size() / 2][2];
 			int k = 0;
 			for (int j = 0; j < listGlobalePath.get(i).size() - 1; j += 2) {
@@ -178,9 +193,18 @@ public class HomeController {
 		}
 
 		matriceStr += "]";
+
 		model.addAttribute("matrix", matriceStr);
 
 		return "leaflet";
+
+	}
+	
+	@GetMapping("/mapEmpty")
+	public String showMapEmpty() {
+
+		
+		return "map.html";
 
 	}
 

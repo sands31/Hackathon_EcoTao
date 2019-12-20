@@ -193,9 +193,10 @@ nav {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
   font-size:17px;
   font-weight: bold;
-	padding:8px 11px;
+	padding:10px 11px;
 	text-decoration:none;
 
 
