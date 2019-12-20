@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>ECO TAO</title>
-    <link href="../static/css/groupe.css" rel="stylesheet" type="text/css">
+    <link href="/css/groupe.css" rel="stylesheet" type="text/css">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://kit.fontawesome.com/47ff173283.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-      <img class="tao-logo" src="../static/img/taologo.png" alt="">
+      <img class="tao-logo" src="/img/taologo.png" alt="">
       <nav>
 
           <div class="hamburger">
@@ -74,7 +74,7 @@
 
 
     </footer>
-    <script src="../static/js/app.js"></script>
+    <script src="/js/app.js"></script>
     <script>
     var i=0;
 var timer = setInterval(function(){ document.querySelector("#compteur").textContent = i++;

@@ -1,49 +1,114 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
 
 <head>
     <title>ECO TAO</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="css/leaderboard.css" rel="stylesheet">
-    <link href="js/leaderboard.js" rel="stylesheet">
+    <link href="/css/leaderboard.css" rel="stylesheet">
+    <link href="/js/leaderboard.js" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/47ff173283.js" crossorigin="anonymous"></script>
   </head>
 
 <body>
-<header></header>
+<header>
+      <img class="tao-logo" src="/img/taologo.png" alt="">
+      <nav>
+
+          <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="#">Connectez vous</a></li>
+          <li><a href="#">Recherche</a></li>
+          <li><a href="#">Acheter vos billets</a></li>
+          <li><a href="#">Scanner vos billets</a></li>
+          <li><a href="#">Convertir vos points</a></li>
+          <li><a href="#">Challenge eco</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+    </header>
 <h1>DUBOIS FAMILY CHALLENGE</h1>
 <div id="leaderboard" class="cellit"></div>
-<hr>
+<br>
+<h1>CLASSEMENT GENERAL DE LA REGION</h1>
 <div class='quizgame-rankings'>
   <div class='quizgame-board col-md-6 offset-md-3'>
-    <div class='quizgame-board-title'>Classement regional</div>
     
 <div class='row quizgame-rank text-md-left text-center'>
       <div class='col-md-1 rank rank-1'><span class="rang">1</span></div>
       <div class='col-md-8' class="text">Paul45</div>
-      <div class='col-md-3' class="text">999 de CO2 sauvegarder pour la planete</div>
+      <div class='col-md-3' class="text">9994 de CO2 gagner</div>
     </div>
     
     <div class='row quizgame-rank text-md-left text-center'>
       <div class='col-md-1 rank rank-2'><span class="rang">2</span></div>
       <div class='col-md-8' class="text">Gabito</div>
-      <div class='col-md-3' class="text">829 de CO2 sauvegarder pour la planete</div>
+      <div class='col-md-3' class="text">8292 de CO2 gagner</div>
     </div>
     
     <div class='row quizgame-rank text-md-left text-center'>
       <div class='col-md-1 rank rank-3'><span class="rang">3</span></div>
       <div class='col-md-8' class="text">Mico</div>
-      <div class='col-md-3' class="text">762 de CO2 sauvegarder pour la planete</div>
+      <div class='col-md-3' class="text">7624 de CO2 gagner</div>
     </div>
     
   </div>
 </div>
-<footer></footer>
+<footer>
+
+      <div class="footer">
+
+        <div class="smedia">
+          <ul>
+
+            <li>
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-facebook-f"></i>
+            </li>
+
+            <li>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-instagram"></i>
+            </li>
+
+            <li>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-twitter"></i>
+            </li>
+
+            <li>
+              <i class="fab fa-linkedin-in"></i>
+              <i class="fab fa-linkedin-in"></i>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="copyright">© 2019 www.reseau-tao.fr</div>
+
+      </div>
+
+
+    </footer>
+    <script src="/js/app.js"></script>
+    <script>
+    var i=0;
+var timer = setInterval(function(){ document.querySelector("#compteur").textContent = i++;
+                           if(i>1000){                 clearInterval(timer);
+document.querySelector("#compteur").classList.add("end");
+}                                      }, 1000);
+    </script>
 
 
 
 
 
-<script src="js/leaderboard.js" ></script>
+<script src="/js/leaderboard.js" ></script>
 </body>
 </html>
