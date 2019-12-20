@@ -39,12 +39,12 @@
     </header>
 
     <main class="searchPage">
-        <h1 class="h1Recherche">Recherche par lieux</h1>
-        <div>
-            <form class="divRecherche">
-                <input class="inputRecherche" name="Lieu" type="text" placeholder="Ecrivez l'adresse" required autofocus>
-            </form>
-        </div>
+       
+           <form class="research_bouton" action="/recherche" method="get">
+      <input class="inputHaut" type="search">
+      <i class="fa fa-search"></i>
+    </form>
+       
         <h2 class="h2Recherche">Trouvez votre trajet</h2>
 
         <div>
@@ -53,68 +53,33 @@
                 <input class="inputTrajet" name="Lieu" type="text" placeholder="Arrivé" required autofocus>
             </form>
         </div>
-        <div class="divButton">
-            <button>
-            <a href="/request" class="searchButton">Rechercher</a>
-                
-            </button>
+        <div class="application_bouton buttonPremier">
+          <a href="/request" class="use_appli">Rechercher</a>
         </div>
+       
+
+      
 
         <div class="containerCards smedia">
+     
+        
+        
             <div th:each="trajet,iter : ${journeys}" class="journeys">
+               <form action="/showPath" method="post" class="formClass">
+        <button type="submit" class="buttonClass quizgame-rank">
                 <ul th:each="type : ${trajet}">
                     <li><i th:class="(@{${type.contains('gEC')}}) ? 'fas fa-leaf' : ''"></i> <i th:class="(@{${type}} == 'Bus') ? 'fas fa-bus' : ''"></i> <i th:class="(@{${type}} == 'walking') ? 'fas fa-walking' : ''"></i> <i th:class="(@{${type}} == 'car') ? 'fas fa-car' : ''"></i> <i th:class="(@{${type}} == 'Tramway') ? 'fas fa-subway' : ''"></i> <i th:class="(@{${type}} == 'park') ? 'fas fa-parking' : ''"></i> <i th:class="(@{${type}} == 'bike') ? 'fas fa-bicycle' : ''"></i> <i th:class="(@{${type.contains('min')}}) ? 'fas fa-clock' : ''"></i>
                     </li>
                     <li th:text="(@{${type.contains('gEC')}} or @{${type.contains('min')}}) ? ${type} : ''"></li>
                 </ul>
-                <form action="/showPath" method="post">
+                
        	  	     <input th:value="${iter.index}" name = "index" type="hidden">
-       	  	    <button type="submit" >show the Path</button>
-       	  	</form>
+       	  </button>
+            	</form>
             </div>
+            
         </div>
 
-        <div class="containerCards smedia">
-            <div class="journeys">
-                <ul>
-                    <li><i class="fas fa-leaf"></i></li>
-                    <li>831 gEC</li>
-                </ul>
-                <ul>
-                    <li><i class="fas fa-walking"></i></li>
-                    <li>walking</li>
-                </ul>
-                <ul>
-                    <li><i class="fas fa-car"></i></li>
-                    <li>car</li>
-                </ul>
-                <ul>
-                    <li><i class="fas fa-subway"></i></li>
-                    <li>subway</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="containerCards smedia">
-            <div class="journeys">
-                <ul>
-                    <li><i class="fas fa-leaf"></i></li>
-                    <li>831 gEC</li>
-                </ul>
-                <ul>
-                    <li><i class="fas fa-walking"></i></li>
-                    <li>walking</li>
-                </ul>
-                <ul>
-                    <li><i class="fas fa-car"></i></li>
-                    <li>car</li>            
-                </ul>
-                <ul>
-                    <li><i class="fas fa-subway"></i></li>
-                    <li>subway</li>
-                </ul>
-            </div>
-        </div>
     </main>
 
 
