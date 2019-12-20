@@ -51,6 +51,13 @@
     </form>
 
     <div id="map"></div>
+	 
+	 <div style="display:none">
+	 <div  th:text ="${longFrom}"  id="longFrom"></div>
+	 <div th:text ="${latFrom}" id="latFrom"></div>
+	 <div th:text ="${longTo} "  id="longTo"></div>
+	 <div th:text ="${latTo}"  id="latTo"></div>
+	 </div>
     
     <footer>
       <div class="footer">
@@ -95,25 +102,18 @@
         <div class="copyright"></div>
       </div>
     </footer>
-    <script >
-    
-    var L=window.L;
 
-    var map = L.map('map').setView([47.893684199999996, 1.8951615], 13);
+    <script th:inline="javascript">
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+      /*<![CDATA[*/
+	    
+         var matrix = JSON.parse(/*[[${matrix}]]*/);
 
-    L.marker([47.893684199999996, 1.8951615]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
- 
+       /*]]>*/
+</script> 
 
 
-    
-    
-    </script>
+<script src="js/map.js"></script>
     <script src="js/app.js"></script>
 
   </body>

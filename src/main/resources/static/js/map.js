@@ -8,7 +8,7 @@ var latFrom = document.getElementById('latFrom').innerHTML;
 var longTo = document.getElementById('longTo').innerHTML;
 var latTo = document.getElementById('latTo').innerHTML;
 
-var map = L.map('map').setView([latFrom, longFrom], 13);
+var map = L.map('map').setView([47.893684199999996, 1.8951615], 13);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
