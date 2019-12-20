@@ -63,7 +63,15 @@
         <div class="containerCards smedia">
             <div th:each="trajet,iter : ${journeys}" class="journeys">
                 <ul th:each="type : ${trajet}">
-                    <li><i th:class="(@{${type.contains('gEC')}}) ? 'fas fa-leaf' : ''"></i> <i th:class="(@{${type}} == 'Bus') ? 'fas fa-bus' : ''"></i> <i th:class="(@{${type}} == 'walking') ? 'fas fa-walking' : ''"></i> <i th:class="(@{${type}} == 'car') ? 'fas fa-car' : ''"></i> <i th:class="(@{${type}} == 'Tramway') ? 'fas fa-subway' : ''"></i> <i th:class="(@{${type}} == 'park') ? 'fas fa-parking' : ''"></i> <i th:class="(@{${type}} == 'bike') ? 'fas fa-bicycle' : ''"></i> <i th:class="(@{${type.contains('min')}}) ? 'fas fa-clock' : ''"></i>
+                    <li><i th:class="(@{${type.contains('gEC')}}) ? 'fas fa-leaf' : ''"></i> 
+                    <i th:class="(@{${type}} == 'Bus') ? 'fas fa-bus' : ''"></i>
+                     <i th:class="(@{${type}} == 'walking') ? 'fas fa-walking' : ''"></i> 
+                     <i th:class="(@{${type}} == 'car') ? 'fas fa-car' : ''"></i> 
+                     <i th:class="(@{${type}} == 'Tramway') ? 'fas fa-subway' : ''"></i> 
+                     <i th:class="(@{${type}} == 'park') ? 'fas fa-parking' : ''"></i> 
+                     <i th:class="(@{${type}} == 'bike') ? 'fas fa-bicycle' : ''"></i> 
+                     <i th:class="(@{${type.contains('min')}}) ? 'fas fa-clock' : ''"></i>
+                     <i th:class="(@{${!type.contains('min')}} and @{${type}} != 'bike' and @{${type}} != 'park' and @{${type}} != 'Tramway' and @{${type}} != 'car' and @{${type}} != 'walking' and @{${type}} != 'Bus' and @{${!type.contains('gEC')}}) ? 'fas fa-random' : ''"></i>
                     </li>
                     <li th:text="(@{${type.contains('gEC')}} or @{${type.contains('min')}}) ? ${type} : ''"></li>
                 </ul>
